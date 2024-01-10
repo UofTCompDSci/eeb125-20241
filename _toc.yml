@@ -22,7 +22,7 @@ parts:
 
   - caption: Week 1
     chapters:
-    - file: weekly-materials/week01/lecture/week1_TPF.pdf
+    - link: https://q.utoronto.ca/files/29800489/download?download_frd=1 
       title: Prof. Parins-Fukuchi's Slides
     # - file: weekly-materials/week01/lecture/week1_kp.ipynb
     #   title: Prof. Vishnubhotla's Notebook
