@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>EEB125 Homework 1: A Python Intro &#8212; Computation and Data Science for the Life and Physical Sciences</title>
+    <title>EEB125 Week 1: Data Science, Python, and Jupyter &#8212; Computation and Data Science for the Life and Physical Sciences</title>
   
   
   
@@ -61,11 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week01/homework/Homework_1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week01/lecture/week1_kp';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="EEB125 Week 1: Data Science, Python, and Jupyter" href="../lecture/week1_kp.html" />
+    <link rel="next" title="EEB125 Homework 1: A Python Intro" href="../homework/Homework_1.html" />
+    <link rel="prev" title="Guide to Using MarkUs" href="../../../guides/markus_guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://q.utoronto.ca/files/29800489/download?download_frd=1">Prof. Parins-Fukuchi's Slides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture/week1_kp.html">Prof. Vishnubhotla's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 1 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prof. Vishnubhotla's Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/Homework_1.html">Week 1 Homework</a></li>
 </ul>
 
     </div>
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week01/homework/Homework_1.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week01/lecture/week1_kp.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -251,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week01/homework/Homework_1.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week01/lecture/week1_kp.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +334,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>EEB125 Homework 1: A Python Intro</h1>
+    <h1>EEB125 Week 1: Data Science, Python, and Jupyter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -343,11 +344,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-homework">Purpose of Homework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-filling-in-some-python-code">Task 1: Filling in some Python code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-a-bit-of-computing">Task 2: A bit of computing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-written-response">Task 3: Written Response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-facts">Quick Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-it">What is it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-code">What is code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-demo">Python Demo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn-in-this-course">What you’ll learn in this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#science">Science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-write-and-run-code">Where do we write and run code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -359,123 +369,192 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eeb125-homework-1-a-python-intro">
-<h1>EEB125 Homework 1: A Python Intro<a class="headerlink" href="#eeb125-homework-1-a-python-intro" title="Permalink to this heading">#</a></h1>
-<section id="purpose-of-homework">
-<h2>Purpose of Homework<a class="headerlink" href="#purpose-of-homework" title="Permalink to this heading">#</a></h2>
-<p>Welcome to your first weekly homework assignment! You are encouraged to refer to lecture content and liberally use course resources such as the discussion board and office hours.</p>
-<p>Homeworks build off of content explored in lecture and in lab and give you an opportunity to practice with the material. Homeworks will contain tasks that focus on tools and knowledge described in lecture and lab that week. Data science knowledge is often cumulative, and you will be asked to refer to prior weeks’ content (such as loading in datasets, which is something you’re going to do a lot of in this course).</p>
-<p>Homeworks may also be continuations of the shorter labs done during that week, and will feature a relatively greater emphasis on application of tools, inquiry of concepts, and interpretation of your data science findings. Homeworks will feature a mix of coding and written response questions.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eeb125-week-1-data-science-python-and-jupyter">
+<h1>EEB125 Week 1: Data Science, Python, and Jupyter<a class="headerlink" href="#eeb125-week-1-data-science-python-and-jupyter" title="Permalink to this heading">#</a></h1>
+<section id="quick-facts">
+<h2>Quick Facts<a class="headerlink" href="#quick-facts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Name: Krishnapriya Vishnubhotla (KP)</p></li>
+<li><p>PhD in the Artificial Intelligence group</p></li>
+<li><p>CS instructor for this course</p></li>
+</ul>
 </section>
-<section id="logistics">
-<h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h2>
-<p><strong>Due date</strong>: The homework is due 5:00pm on Tuesday, January 16.</p>
-<p>You will submit your work on <a class="reference external" href="https://markus-ds.teach.cs.toronto.edu">MarkUs</a>.
-To submit your work:</p>
-<ol class="arabic simple">
-<li><p>Download this file (<code class="docutils literal notranslate"><span class="pre">Homework_1.ipynb</span></code>) from JupyterHub. (See <a class="reference internal" href="../../../guides/jupyterhub_guide.html"><span class="doc std std-doc">our JupyterHub Guide</span></a> for detailed instructions.)</p></li>
-<li><p>Submit this file to MarkUs under the <strong>hw1</strong> assignment. (See <a class="reference internal" href="../../../guides/markus_guide.html"><span class="doc std std-doc">our MarkUs Guide</span></a> for detailed instructions.)
-All homeworks will take place in a Jupyter notebook (like this one). When you are done, you will download this notebook and submit it to MarkUs.</p></li>
-</ol>
+<section id="data-science">
+<h2>Data Science<a class="headerlink" href="#data-science" title="Permalink to this heading">#</a></h2>
+<section id="what-is-it">
+<h3>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this heading">#</a></h3>
+<p>Learning from Data</p>
+<ul class="simple">
+<li><p>Large collection of (electronic) data + programming + statistics</p></li>
+<li><p>A lot of data science tools and resources are free to use! (open-source)</p></li>
+</ul>
 </section>
-<section id="task-1-filling-in-some-python-code">
-<h2>Task 1: Filling in some Python code<a class="headerlink" href="#task-1-filling-in-some-python-code" title="Permalink to this heading">#</a></h2>
-<p>Next week, we’ll be introducing the Python programming language more formally.
-For this homework, we’re going to keep things short and ask you to fill in some bits of code and run it, just to get used to the process.</p>
-<p>In the cell below, replace the ellipsis (<code class="docutils literal notranslate"><span class="pre">...</span></code>) with the number of courses you’re taking this semester.</p>
+<section id="what-is-code">
+<h3>What is code?<a class="headerlink" href="#what-is-code" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A highly-structured set of instructions (program, or code)</p></li>
+<li><p>in a language that a computer can <strong>understand</strong> (programming/coding language)</p></li>
+</ul>
+<p>What do I mean by “understand”?</p>
+<ul class="simple">
+<li><p>The computer can convert the code into a sequential set of actions that it can run (execute).</p></li>
+<li><p>For example: setting an alarm.</p></li>
+<li><p>For example: performing calculations</p></li>
+</ul>
+<p>These instructions need to be written in a special <strong>programming language</strong> (not natural languages, like English or French)</p>
+<ul class="simple">
+<li><p>There are several programming languages (C, Java, <strong>Python</strong>)</p></li>
+<li><p>Python has a very friendly syntax (the grammar of the language), and many many inbuilt tools that are useful for data science</p></li>
+</ul>
+</section>
+<section id="python-demo">
+<h3>Python Demo<a class="headerlink" href="#python-demo" title="Permalink to this heading">#</a></h3>
+<p>Two steps:</p>
+<p>-&gt; Writing the code (input)</p>
+<p>-&gt; Running the code (execute + output)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_courses</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># Replace the ... with your number of courses</span>
-
-<span class="c1"># We&#39;ve provided this code to check your work. Try running this cell!</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You are taking </span><span class="si">{</span><span class="n">num_courses</span><span class="si">}</span><span class="s2"> course(s).&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You should see something like <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">are</span> <span class="pre">taking</span> <span class="pre">5</span> <span class="pre">course(s).</span></code> in the output when you run the cell.</p>
-<p>Next, we have two new variables, <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">last_name</span></code>.
-Replace each <code class="docutils literal notranslate"><span class="pre">...</span></code> with your first and last name, respectively.</p>
-<p><em>Be sure to surround your name with quotes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;David&quot;</span></code>, not just <code class="docutils literal notranslate"><span class="pre">David</span></code>.</em>
-This tells Python that your name should be interpreted as data (i.e., a name) rather than code or a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># Replace the ... with your first name, surrounded by quotes</span>
-<span class="n">last_name</span> <span class="o">=</span> <span class="o">...</span>   <span class="c1"># Replace the ... with your last name, surrounded by quotes</span>
-
-<span class="c1"># We&#39;ve provided this code to check your work. Try running this cell!</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">, and welcome to EEB125!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#display</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250
 </pre></div>
 </div>
 </div>
 </div>
-<p>Did you see a welcome message with your name appear?
-If not, please ask for help if you get stuck!</p>
-</section>
-<section id="task-2-a-bit-of-computing">
-<h2>Task 2: A bit of computing<a class="headerlink" href="#task-2-a-bit-of-computing" title="Permalink to this heading">#</a></h2>
-<p>Now, let’s see how we can use Python like a calculator, where we write <em>code</em> instead of pushing buttons.
-Consider the following problem:</p>
-<blockquote>
-<div><p>At the time of writing, the population of Canada is 39,395,674, and the population of Ontario is 15,308,317 (<a class="reference external" href="https://www150.statcan.gc.ca/n1/pub/71-607-x/71-607-x2018005-eng.htm">Statistics Canada</a>). What percentage of Canada’s total population lives in Ontario?</p>
-</div></blockquote>
-<p>To answer this problem, we need to do the following: divide Ontario’s population by Canada’s population, and then (to convert to a percentage), multiply the result by 100.</p>
-<p>While you could do this on a calculator, we want you to use Python instead!
-In the cell below, calculate this percentage, and store the result in a variable called <code class="docutils literal notranslate"><span class="pre">ontario_percentage</span></code>.
-You can copy and paste the population numbers from the above paragraph, except you’ll need to <em>delete the commas</em>, since Python expects just a sequence of digits for a number.
-When defining variable, you can perform arithmetic operations on the right-hand side of the <code class="docutils literal notranslate"><span class="pre">=</span></code>, e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">five</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span>
-</pre></div>
-</div>
-<p>You’ll find the following <em>table of Python arithmetic operations</em> helpful (more on this in next week’s class):</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Operation</p></th>
-<th class="head"><p>Symbol</p></th>
-<th class="head"><p>Example Python code</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Addition</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Subtraction</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">2</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Multiplication</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Division</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">/</span> <span class="pre">2</span></code></p></td>
-</tr>
-</tbody>
-</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the ... with an arithmetic expression to calculate the desired percentage</span>
-<span class="n">ontario_percentage</span> <span class="o">=</span> <span class="o">...</span>
-
-
-<span class="c1"># We&#39;ve provided this code to check your work. Try running this cell!</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ontario has </span><span class="si">{</span><span class="n">ontario_percentage</span><span class="si">}</span><span class="s2">% of Canada&#39;s Total Population&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#quick math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># text variables</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;KP&quot;</span>
+<span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;2024&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KP
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello! My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, and I&#39;m living in the year </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello! My name is KP, and I&#39;m living in the year 2024
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="task-3-written-response">
-<h2>Task 3: Written Response<a class="headerlink" href="#task-3-written-response" title="Permalink to this heading">#</a></h2>
-<p>Finally, we want to give you practice using Markdown to create text inside a Jupyter notebook.</p>
-<p><strong>Create a new Markdown cell</strong> (as described in the <a class="reference internal" href="../../../guides/jupyterhub_guide.html"><span class="doc std std-doc">JupyterHub Guide</span></a>), and inside the cell write answers to the following questions:</p>
-<ol class="arabic simple">
-<li><p>What kinds of data are you interested in working with this semester?</p></li>
-<li><p>What are your first impressions of our course software: Python, Jupyter notebooks, and JupyterHub?</p></li>
-<li><p>What are you looking forward to in EEB125?</p></li>
-</ol>
+</section>
+<section id="what-you-ll-learn-in-this-course">
+<h2>What you’ll learn in this course<a class="headerlink" href="#what-you-ll-learn-in-this-course" title="Permalink to this heading">#</a></h2>
+<p>How to write <strong>code</strong> (instructions) that can read <strong>data</strong> and <strong>compute</strong> various <strong>statistical</strong> metrics of interest from it.</p>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
+<p>The data that we work with is usually information collected by other scientists and researchers over years and decades, and is stored electronically in a variety of formats: text files, excel files, images, videos.</p>
+<p>For example, I can obtain a large CSV file from <a class="reference external" href="https://weather.gc.ca/">https://weather.gc.ca/</a> (Environment and Weather Canada) that contains the daily max temperature recorded in Toronto from when they first started recording it – I think 1840 – in a spreadsheet.</p>
+<p><img alt="Screenshot%20from%202024-01-09%2017-42-53.png" src="weekly-materials/week01/lecture/attachment:Screenshot%20from%202024-01-09%2017-42-53.png" /></p>
+</section>
+<section id="science">
+<h3>Science<a class="headerlink" href="#science" title="Permalink to this heading">#</a></h3>
+<p>Say I’m interested in a bunch of questions around global warming.
+We can write code that will</p>
+<ul class="simple">
+<li><p>read this data file</p></li>
+<li><p>tell us how much the average temperature each month increased from 1840 to 2023</p></li>
+<li><p>find which year had the hottest March 15, or the coldest January 10th</p></li>
+<li><p>plot all of this in beautiful graphs.</p></li>
+</ul>
+<p><img alt="Screenshot%20from%202024-01-09%2018-00-20-2.png" src="weekly-materials/week01/lecture/attachment:Screenshot%20from%202024-01-09%2018-00-20-2.png" /></p>
+</section>
+<section id="where-do-we-write-and-run-code">
+<h3>Where do we write and run code?<a class="headerlink" href="#where-do-we-write-and-run-code" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Typically, one writes code in a text file that is saved as &lt;name&gt;.py (similar to .pdf, or .docx), and the file is then run (or executed) in a terminal (phew!).</p></li>
+<li><p>Here, we use <strong>Jupyter Notebooks</strong>, a software that runs in your browser and allows you write, run, and view the outputs of your code – along with normal text, like a word document.</p></li>
+<li><p>You can access Jupyter by going to <a class="reference external" href="https://jupyter.utoronto.ca">https://jupyter.utoronto.ca</a> (see the JupyterHub guide on the course website).</p></li>
+</ul>
+</section>
+<section id="jupyter-notebooks">
+<h3>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h3>
+<p>Allow you write (a)code in <strong>Python</strong>, as well as (b)notes (explanations, figures) in <strong>Markdown</strong>.</p>
+<ul class="simple">
+<li><p>Run the code in the browser</p></li>
+<li><p>Display the outputs in a nice format in the browser</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -492,7 +571,7 @@ When defining variable, you can perform arithmetic operations on the right-hand 
         },
         kernelOptions: {
             name: "python3",
-            path: "./weekly-materials/week01/homework"
+            path: "./weekly-materials/week01/lecture"
         },
         predefinedOutput: true
     }
@@ -508,13 +587,22 @@ When defining variable, you can perform arithmetic operations on the right-hand 
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/week1_kp.html"
+       href="../../../guides/markus_guide.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">EEB125 Week 1: Data Science, Python, and Jupyter</p>
+        <p class="prev-next-title">Guide to Using MarkUs</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../homework/Homework_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EEB125 Homework 1: A Python Intro</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -531,11 +619,20 @@ When defining variable, you can perform arithmetic operations on the right-hand 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-homework">Purpose of Homework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-filling-in-some-python-code">Task 1: Filling in some Python code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-a-bit-of-computing">Task 2: A bit of computing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-written-response">Task 3: Written Response</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-facts">Quick Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science">Data Science</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-it">What is it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-code">What is code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-demo">Python Demo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn-in-this-course">What you’ll learn in this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#science">Science</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-write-and-run-code">Where do we write and run code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
