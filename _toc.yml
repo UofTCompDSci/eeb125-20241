@@ -28,6 +28,8 @@ parts:
       title: Prof. Vishnubhotla's Notebook
     - file: weekly-materials/week01/homework/Homework_1.ipynb
       title: Week 1 Homework
+    - file: weekly-materials/week01/homework/Homework_1_key.ipynb
+      title: Homework 1 Sample Solution
 
   - caption: Week 2
     chapters:
