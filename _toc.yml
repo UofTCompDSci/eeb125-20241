@@ -66,6 +66,6 @@ parts:
     chapters:
     - file: weekly-materials/week07/lecture/lecture7.ipynb
       title: KP's Notebook
-#    - file: weekly-materials/week05/homework/Homework_5.ipynb
-#      title: Week 5 Homework
+    - file: weekly-materials/week07/homework/Homework_7.ipynb
+      title: Week 7 Homework
 
