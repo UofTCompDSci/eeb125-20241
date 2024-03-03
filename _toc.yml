@@ -68,4 +68,11 @@ parts:
       title: KP's Notebook
     - file: weekly-materials/week07/homework/Homework_7.ipynb
       title: Week 7 Homework
-
+  - caption: Final Project
+    chapters:
+    - file: project/project_proposal.ipynb
+      title: Final Project Proposal
+    - file: project/project_instructions.ipynb
+      title: Final Project Instructions
+    - file: project/eeb125_project_slides.ipynb
+      title: Final Project Slides Template
