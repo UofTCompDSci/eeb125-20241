@@ -76,3 +76,8 @@ parts:
       title: Final Project Instructions
     - file: project/eeb125_project_slides.ipynb
       title: Final Project Slides Template
+      
+  - caption: Week 8
+    chapters:
+    - file: weekly-materials/week08/lecture/lecture8.ipynb
+      title: KP's Notebook
