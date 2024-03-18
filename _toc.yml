@@ -93,3 +93,9 @@ parts:
     - file: weekly-materials/week09/homework/Homework_9.ipynb
       title: Week 9 Homework
 
+  - caption: Week 10
+    chapters:
+    - file: weekly-materials/week10/lecture/lecture10.ipynb
+      title: Moon's Notebook
+    - file: weekly-materials/week10/homework/Homework_10.ipynb
+      title: Week 10 Homework
