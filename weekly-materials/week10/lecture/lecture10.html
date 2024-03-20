@@ -534,9 +534,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/474609af4b6acf803acdbf5a27ec844da0e206b3aaf3dd8fccec3207e9ff1661.png" src="../../../_images/474609af4b6acf803acdbf5a27ec844da0e206b3aaf3dd8fccec3207e9ff1661.png" />
-</div>
 </div>
 </section>
 <section id="id1">
@@ -607,22 +604,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/0j/ybsv4ncn5w50v40vdh5jjlww0000gn/T/ipykernel_14702/471543084.py:1: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>165.0
-</pre></div>
-</div>
-<img alt="../../../_images/73da16874a3d46de4996011d47cd295ce6d6fcd8135a9a2da5e897f2a26ab11a.png" src="../../../_images/73da16874a3d46de4996011d47cd295ce6d6fcd8135a9a2da5e897f2a26ab11a.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>One example of a “resample” of the original sample/data is: {165, 168, 168, 168, 170} and the median of this resample is 168.</p></li>
@@ -636,12 +617,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168.0
-</pre></div>
-</div>
-<img alt="../../../_images/e2dbffe35c27044ebdeffd1a502a6c94a777a63370acb089e9fc5136aa97c708.png" src="../../../_images/e2dbffe35c27044ebdeffd1a502a6c94a777a63370acb089e9fc5136aa97c708.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>Another resample of the original sample/data is: {160, 160, 165, 165, 168} and the mean of this resample is 165.</p></li>
@@ -654,12 +629,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>165.0
-</pre></div>
-</div>
-<img alt="../../../_images/ff89da1e587cce276c51012484a9d8451a82fb86524e62fca2c16d688ff22187.png" src="../../../_images/ff89da1e587cce276c51012484a9d8451a82fb86524e62fca2c16d688ff22187.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>Another resample of the original sample/data is: {162, 166, 168, 168, 170} and the median of this resample is 168.</p></li>
@@ -671,12 +640,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="n">heights_3</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168.0
-</pre></div>
-</div>
-<img alt="../../../_images/26da797df8a1899f6029599fde90a20ea26fd9ce6fdea3fc72b6e5540b7cb060.png" src="../../../_images/26da797df8a1899f6029599fde90a20ea26fd9ce6fdea3fc72b6e5540b7cb060.png" />
 </div>
 </div>
 <p>Now, with all of our resamples we have the medians of the resamples are 168, 165, and 168.</p>
@@ -706,11 +669,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5416, 55)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,19 +678,11 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/382b11bb9748d3fc93b66e4bf086bc77327bcc5be0e0bc14f54f51a1282829f6.png" src="../../../_images/382b11bb9748d3fc93b66e4bf086bc77327bcc5be0e0bc14f54f51a1282829f6.png" />
-</div>
 </div>
 <p>What is a good representation of the centre of the data: mean or median?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pantheria</span><span class="p">[</span><span class="s2">&quot;9-1_GestationLen_d&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68.405
 </pre></div>
 </div>
 </div>
@@ -751,18 +701,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/1df0a212c429769bdd2629544930e52556b1493f9bb40ecddfdef68fbdae09dd.png" src="../../../_images/1df0a212c429769bdd2629544930e52556b1493f9bb40ecddfdef68fbdae09dd.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boot_gest</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.87
 </pre></div>
 </div>
 </div>
@@ -780,12 +722,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="n">boot_gest</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>65.35
-</pre></div>
-</div>
-<img alt="../../../_images/24d5e155399c1e2d44673c9a34fdb71009f5b3d7d4896c4f1b7937b5e7058c0d.png" src="../../../_images/24d5e155399c1e2d44673c9a34fdb71009f5b3d7d4896c4f1b7937b5e7058c0d.png" />
 </div>
 </div>
 <section id="why-is-this-a-good-idea">
@@ -820,11 +756,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.06
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>Now let’s compute many bootstrap medians by writing a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
@@ -849,9 +780,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/28b3bffd482da95e5674ce25f05f3201062f7faa5d656db430db096b12a78f50.png" src="../../../_images/28b3bffd482da95e5674ce25f05f3201062f7faa5d656db430db096b12a78f50.png" />
-</div>
 </div>
 </section>
 </section>
@@ -870,20 +798,10 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.99
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_medians</span><span class="p">,</span> <span class="mf">97.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.21
 </pre></div>
 </div>
 </div>
@@ -898,9 +816,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Medians of resampled gestational lengths (days)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/e6e5cd721ab2b92bcc7139f541f9a43aedde74fbce99bd0915550c1eafb86f50.png" src="../../../_images/e6e5cd721ab2b92bcc7139f541f9a43aedde74fbce99bd0915550c1eafb86f50.png" />
 </div>
 </div>
 </section>
@@ -923,80 +838,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="8" halign="left">5-1_AdultBodyMass_g</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-    </tr>
-    <tr>
-      <th>MSW05_Order</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Carnivora</th>
-      <td>250.0</td>
-      <td>47386.453560</td>
-      <td>153411.127148</td>
-      <td>78.45</td>
-      <td>1401.37</td>
-      <td>3592.265</td>
-      <td>12948.115</td>
-      <td>1600000.00</td>
-    </tr>
-    <tr>
-      <th>Primates</th>
-      <td>265.0</td>
-      <td>5880.936113</td>
-      <td>13134.573529</td>
-      <td>31.23</td>
-      <td>749.47</td>
-      <td>3005.990</td>
-      <td>7077.660</td>
-      <td>149325.19</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1007,9 +848,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
                  <span class="n">xrot</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/5a8ec9679de5699cc095db91be194a5657f6516ceca78646f22b30da110d7b25.png" src="../../../_images/5a8ec9679de5699cc095db91be194a5657f6516ceca78646f22b30da110d7b25.png" />
 </div>
 </div>
 <p>Create a function to create one bootstrap sample of the median difference.</p>
@@ -1043,11 +881,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1131.995
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now, compute bootstrap distribution for a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <div class="cell docutils container">
@@ -1068,19 +901,11 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/b3aa9da623c0db501c51a3d25fbf36ed0bde5b83a2e75ec667b2c833a431f9b8.png" src="../../../_images/b3aa9da623c0db501c51a3d25fbf36ed0bde5b83a2e75ec667b2c833a431f9b8.png" />
-</div>
 </div>
 <p>A 95% confidence interval for the median difference in mass of carnivores and primates is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootst_med_diffs</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootst_med_diffs</span><span class="p">,</span> <span class="mf">97.5</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-525.0799999999999, 1875.9748749999992)
 </pre></div>
 </div>
 </div>
@@ -1139,78 +964,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>indvar</th>
-      <th>depvar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>8</td>
-      <td>15</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Let’s plot the data</p>
 <div class="cell docutils container">
@@ -1222,9 +975,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;depvar&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/988e6b21bf557d08cd35773070506e54a04ca7533d5887170a52686640fc83f6.png" src="../../../_images/988e6b21bf557d08cd35773070506e54a04ca7533d5887170a52686640fc83f6.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1264,13 +1014,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    7.0
-indvar       1.0
-dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>The estimates of the <strong>y-intercept</strong> and <strong>slope</strong> are labelled <code class="docutils literal notranslate"><span class="pre">Intercept</span></code> (7.0)  and <code class="docutils literal notranslate"><span class="pre">indvar</span></code> (1.0).</p></li>
@@ -1290,73 +1033,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>depvar</th>
-      <th>indvar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>8</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>9</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1366,9 +1042,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/af1ab0dd1145602f353f7f91616e455596295c685aa15657b63bfbd1f17691e3.png" src="../../../_images/af1ab0dd1145602f353f7f91616e455596295c685aa15657b63bfbd1f17691e3.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,13 +1050,6 @@ dtype: float64
 <span class="n">regmod_fit</span> <span class="o">=</span> <span class="n">regmod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># estimate/fit the model </span>
 
 <span class="n">regmod_fit</span><span class="o">.</span><span class="n">params</span> <span class="c1"># get parameter estimates</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    2.0
-indvar       1.0
-dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1425,73 +1091,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>depvar</th>
-      <th>indvar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>1.176029</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>2.398217</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>2.376304</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>3.087617</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>4.410038</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>5.212126</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>8</td>
-      <td>7.454480</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>9</td>
-      <td>8.358801</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1501,9 +1100,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/02ec3eafd2b1b737aaffead7b351e302492bdb45f8979e01145065200a52ed5a.png" src="../../../_images/02ec3eafd2b1b737aaffead7b351e302492bdb45f8979e01145065200a52ed5a.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1512,13 +1108,6 @@ dtype: float64
 <span class="n">regmod_fit</span> <span class="o">=</span> <span class="n">regmod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># estimate/fit the model </span>
 
 <span class="n">regmod_fit</span><span class="o">.</span><span class="n">params</span> <span class="c1"># get parameter estimates</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    1.484180
-indvar       0.931917
-dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1533,9 +1122,6 @@ dtype: float64
 <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;indvar&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;depvar&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/2cf775966ff1e76b7b4a1cb982220b4c9805d86f05f09c8ec1029b8b2e760112.png" src="../../../_images/2cf775966ff1e76b7b4a1cb982220b4c9805d86f05f09c8ec1029b8b2e760112.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">regplot()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library will produce a scatter plot with the regression line.</p>
@@ -1559,21 +1145,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="simpletable">
-<tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th> <td>    1.8925</td> <td>    0.201</td> <td>    9.432</td> <td> 0.000</td> <td>    1.377</td> <td>    2.408</td>
-</tr>
-<tr>
-  <th>indvar1</th>   <td>    0.5493</td> <td>    0.102</td> <td>    5.411</td> <td> 0.003</td> <td>    0.288</td> <td>    0.810</td>
-</tr>
-<tr>
-  <th>indvar2</th>   <td>    0.3852</td> <td>    0.097</td> <td>    3.984</td> <td> 0.010</td> <td>    0.137</td> <td>    0.634</td>
-</tr>
-</table></div></div>
 </div>
 <ul class="simple">
 <li><p>A statistical summary of the regression model is given above using the <code class="docutils literal notranslate"><span class="pre">summary</span></code> function in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p></li>
@@ -1585,18 +1156,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="simpletable">
-<tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th> <td>    1.4842</td> <td>    0.442</td> <td>    3.357</td> <td> 0.015</td> <td>    0.402</td> <td>    2.566</td>
-</tr>
-<tr>
-  <th>indvar</th>    <td>    0.9319</td> <td>    0.090</td> <td>   10.390</td> <td> 0.000</td> <td>    0.712</td> <td>    1.151</td>
-</tr>
-</table></div></div>
 </div>
 <p>What does the statistical summary represent?</p>
 <ul class="simple">
@@ -1617,18 +1176,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="simpletable">
-<tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th> <td>    1.4842</td> <td>    0.442</td> <td>    3.357</td> <td> 0.015</td> <td>    0.402</td> <td>    2.566</td>
-</tr>
-<tr>
-  <th>indvar</th>    <td>    0.9319</td> <td>    0.090</td> <td>   10.390</td> <td> 0.000</td> <td>    0.712</td> <td>    1.151</td>
-</tr>
-</table></div></div>
 </div>
 <ul class="simple">
 <li><p>Currently, how small a p-value should be to provide evidence against a null hypothesis is being debated.  Although, the traditional threshold is 0.05 (i.e., a p-value less than or equal to 0.05 is supposed to indicate evidence against the null hypothesis).</p></li>
@@ -1654,83 +1201,11 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>depvar</th>
-      <th>indvar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>1.176029</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>2.398217</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>2.376304</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>3.087617</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>4.410038</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>5.212126</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>8</td>
-      <td>7.454480</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>9</td>
-      <td>8.358801</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>The <strong>fitted value</strong> for the first row of <code class="docutils literal notranslate"><span class="pre">df</span></code> is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.4842</span> <span class="o">+</span> <span class="mf">0.9319</span> <span class="o">*</span> <span class="mf">1.176029</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5801414251
 </pre></div>
 </div>
 </div>
@@ -1745,30 +1220,12 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.580142
-1    3.719121
-2    3.698699
-3    4.361584
-4    5.593971
-5    6.341451
-6    8.431140
-7    9.273893
-dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <p>The <strong>residual</strong> is how far above or below the line a point is. So, it is the dependent variable minus the fitted value.</p>
 <p>So, for the first row the residual is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mf">2.5801</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.5800999999999998
 </pre></div>
 </div>
 </div>
@@ -1795,11 +1252,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9473452032007467
-</pre></div>
-</div>
-</div>
 </div>
 <section id="example-4-regression-with-two-or-more-independent-variables">
 <h3>Example 4: Regression with two or more independent variables<a class="headerlink" href="#example-4-regression-with-two-or-more-independent-variables" title="Permalink to this heading">#</a></h3>
@@ -1818,82 +1270,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>depvar</th>
-      <th>indvar1</th>
-      <th>indvar2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2</td>
-      <td>0.360539</td>
-      <td>-0.536629</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>1.038950</td>
-      <td>1.315403</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>2.926437</td>
-      <td>2.421051</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>4.449868</td>
-      <td>1.934397</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>4.840407</td>
-      <td>3.113760</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>5.970854</td>
-      <td>4.524267</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>8</td>
-      <td>6.025562</td>
-      <td>6.689682</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>9</td>
-      <td>7.974743</td>
-      <td>7.561192</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>To include more than one independent variable in a regression model add it to the right side of syntax for describing statistical models.</p>
 <p><code class="docutils literal notranslate"><span class="pre">&quot;depvar</span> <span class="pre">~</span> <span class="pre">indvar1</span> <span class="pre">+</span> <span class="pre">indvar2&quot;</span></code></p>
@@ -1919,14 +1295,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    1.892482
-indvar1      0.549341
-indvar2      0.385197
-dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <p>The estimated linear (multiple) linear regression model is:</p>
 <div class="math notranslate nohighlight">
@@ -1947,21 +1315,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="simpletable">
-<tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th> <td>    1.8925</td> <td>    0.201</td> <td>    9.432</td> <td> 0.000</td> <td>    1.377</td> <td>    2.408</td>
-</tr>
-<tr>
-  <th>indvar1</th>   <td>    0.5493</td> <td>    0.102</td> <td>    5.411</td> <td> 0.003</td> <td>    0.288</td> <td>    0.810</td>
-</tr>
-<tr>
-  <th>indvar2</th>   <td>    0.3852</td> <td>    0.097</td> <td>    3.984</td> <td> 0.010</td> <td>    0.137</td> <td>    0.634</td>
-</tr>
-</table></div></div>
 </div>
 <p>The statistical summary indicates:</p>
 <ul class="simple">
@@ -1975,11 +1328,6 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regmod_fit</span><span class="o">.</span><span class="n">rsquared</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9914100322269062
 </pre></div>
 </div>
 </div>
@@ -2005,173 +1353,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>MSW05_Order</th>
-      <th>MSW05_Family</th>
-      <th>MSW05_Genus</th>
-      <th>MSW05_Species</th>
-      <th>MSW05_Binomial</th>
-      <th>1-1_ActivityCycle</th>
-      <th>5-1_AdultBodyMass_g</th>
-      <th>8-1_AdultForearmLen_mm</th>
-      <th>13-1_AdultHeadBodyLen_mm</th>
-      <th>2-1_AgeatEyeOpening_d</th>
-      <th>...</th>
-      <th>26-6_GR_MinLong_dd</th>
-      <th>26-7_GR_MidRangeLong_dd</th>
-      <th>27-1_HuPopDen_Min_n/km2</th>
-      <th>27-2_HuPopDen_Mean_n/km2</th>
-      <th>27-3_HuPopDen_5p_n/km2</th>
-      <th>27-4_HuPopDen_Change</th>
-      <th>28-1_Precip_Mean_mm</th>
-      <th>28-2_Temp_Mean_01degC</th>
-      <th>30-1_AET_Mean_mm</th>
-      <th>30-2_PET_Mean_mm</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Artiodactyla</td>
-      <td>Camelidae</td>
-      <td>Camelus</td>
-      <td>dromedarius</td>
-      <td>Camelus dromedarius</td>
-      <td>3.0</td>
-      <td>492714.47</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Carnivora</td>
-      <td>Canidae</td>
-      <td>Canis</td>
-      <td>adustus</td>
-      <td>Canis adustus</td>
-      <td>1.0</td>
-      <td>10392.49</td>
-      <td>NaN</td>
-      <td>745.32</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>-17.53</td>
-      <td>13.00</td>
-      <td>0.0</td>
-      <td>35.20</td>
-      <td>1.0</td>
-      <td>0.14</td>
-      <td>90.75</td>
-      <td>236.51</td>
-      <td>922.90</td>
-      <td>1534.40</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Carnivora</td>
-      <td>Canidae</td>
-      <td>Canis</td>
-      <td>aureus</td>
-      <td>Canis aureus</td>
-      <td>2.0</td>
-      <td>9658.70</td>
-      <td>NaN</td>
-      <td>827.53</td>
-      <td>7.50</td>
-      <td>...</td>
-      <td>-17.05</td>
-      <td>45.74</td>
-      <td>0.0</td>
-      <td>79.29</td>
-      <td>0.0</td>
-      <td>0.10</td>
-      <td>44.61</td>
-      <td>217.23</td>
-      <td>438.02</td>
-      <td>1358.98</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Carnivora</td>
-      <td>Canidae</td>
-      <td>Canis</td>
-      <td>latrans</td>
-      <td>Canis latrans</td>
-      <td>2.0</td>
-      <td>11989.10</td>
-      <td>NaN</td>
-      <td>872.39</td>
-      <td>11.94</td>
-      <td>...</td>
-      <td>-168.12</td>
-      <td>-117.60</td>
-      <td>0.0</td>
-      <td>27.27</td>
-      <td>0.0</td>
-      <td>0.06</td>
-      <td>53.03</td>
-      <td>58.18</td>
-      <td>503.02</td>
-      <td>728.37</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Carnivora</td>
-      <td>Canidae</td>
-      <td>Canis</td>
-      <td>lupus</td>
-      <td>Canis lupus</td>
-      <td>2.0</td>
-      <td>31756.51</td>
-      <td>NaN</td>
-      <td>1055.00</td>
-      <td>14.01</td>
-      <td>...</td>
-      <td>-171.84</td>
-      <td>3.90</td>
-      <td>0.0</td>
-      <td>37.87</td>
-      <td>0.0</td>
-      <td>0.04</td>
-      <td>34.79</td>
-      <td>4.82</td>
-      <td>313.33</td>
-      <td>561.11</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 55 columns</p>
-</div></div></div>
 </div>
 <p>We will be interested in the following columns.</p>
 <div class="cell docutils container">
@@ -2193,70 +1374,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bodymass</th>
-      <th>longevity</th>
-      <th>gestation</th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>492714.47</td>
-      <td>480.0</td>
-      <td>386.51</td>
-      <td>Camelus dromedarius</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10392.49</td>
-      <td>137.0</td>
-      <td>65.00</td>
-      <td>Canis adustus</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9658.70</td>
-      <td>192.0</td>
-      <td>61.24</td>
-      <td>Canis aureus</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>11989.10</td>
-      <td>262.0</td>
-      <td>61.74</td>
-      <td>Canis latrans</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>31756.51</td>
-      <td>354.0</td>
-      <td>63.50</td>
-      <td>Canis lupus</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Let’s look at the distribution of <code class="docutils literal notranslate"><span class="pre">&quot;bodymass&quot;</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;longevity&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;gestation&quot;</span></code>.</p>
 <div class="cell docutils container">
@@ -2265,9 +1382,6 @@ dtype: float64
                     <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/ee89f8cbfd6724b3347fd27892c86488f240b80aa4a3ad795086e373c7c82129.png" src="../../../_images/ee89f8cbfd6724b3347fd27892c86488f240b80aa4a3ad795086e373c7c82129.png" />
 </div>
 </div>
 <p>Let’s specifically now look at longevity and gestation:</p>
@@ -2279,9 +1393,6 @@ dtype: float64
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gestation (days)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/8b6250a3b123eaef1b35333e46d7f5039ff7dc70301128ca94260514aee14b66.png" src="../../../_images/8b6250a3b123eaef1b35333e46d7f5039ff7dc70301128ca94260514aee14b66.png" />
 </div>
 </div>
 </section>
@@ -2313,18 +1424,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="simpletable">
-<tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th> <td>   38.6062</td> <td>    4.316</td> <td>    8.945</td> <td> 0.000</td> <td>   30.135</td> <td>   47.078</td>
-</tr>
-<tr>
-  <th>longevity</th> <td>    0.4310</td> <td>    0.016</td> <td>   27.657</td> <td> 0.000</td> <td>    0.400</td> <td>    0.462</td>
-</tr>
-</table></div></div>
 </div>
 <ul class="simple">
 <li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = 38.6062 + 0.431\times \texttt{longevity}\)</span></p></li>
@@ -2341,11 +1440,6 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_longgest_fit</span><span class="o">.</span><span class="n">rsquared</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4844536720243986
 </pre></div>
 </div>
 </div>
