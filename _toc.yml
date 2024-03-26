@@ -99,3 +99,12 @@ parts:
       title: Moon's Notebook
     - file: weekly-materials/week10/homework/Homework_10.ipynb
       title: Week 10 Homework
+
+  - caption: Week 11
+    chapters:
+    - file: weekly-materials/week11/lecture/lecture11.ipynb
+      title: Moon's Notebook
+    - file: weekly-materials/week11/homework/Homework_11.ipynb
+      title: Week 11 Homework
+    - file: weekly-materials/week11/exercise/exercise11.ipynb
+      title: Week 11 Exercises (Practice)
