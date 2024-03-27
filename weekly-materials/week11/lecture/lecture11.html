@@ -560,6 +560,73 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>depvar</th>
+      <th>indvar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1.176029</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>2.398217</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>2.376304</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>3.087617</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>4.410038</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+      <td>5.212126</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>7.454480</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>9</td>
+      <td>8.358801</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,6 +637,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;depvar&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02ec3eafd2b1b737aaffead7b351e302492bdb45f8979e01145065200a52ed5a.png" src="../../../_images/02ec3eafd2b1b737aaffead7b351e302492bdb45f8979e01145065200a52ed5a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -584,6 +654,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    1.484180
+indvar       0.931917
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>So, now the relationship isn’t perfectly linear, but close.  The equation of this regression line is:</p>
 <div class="math notranslate nohighlight">
@@ -595,6 +672,9 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;indvar&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;depvar&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/2cf775966ff1e76b7b4a1cb982220b4c9805d86f05f09c8ec1029b8b2e760112.png" src="../../../_images/2cf775966ff1e76b7b4a1cb982220b4c9805d86f05f09c8ec1029b8b2e760112.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">regplot()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> library will produce a scatter plot with the regression line.</p>
@@ -616,11 +696,83 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>depvar</th>
+      <th>indvar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1.176029</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>2.398217</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>2.376304</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>3.087617</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>4.410038</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+      <td>5.212126</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>7.454480</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>9</td>
+      <td>8.358801</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The fitted value for the first row of <code class="docutils literal notranslate"><span class="pre">df</span></code> is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.4842</span> <span class="o">+</span> <span class="mf">0.9310</span> <span class="o">*</span> <span class="mf">1.1760</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.579056
 </pre></div>
 </div>
 </div>
@@ -634,11 +786,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.8632
+</pre></div>
+</div>
+</div>
 </div>
 <p>To extract the fitted values from a regression model use the <code class="docutils literal notranslate"><span class="pre">fittedvalues</span></code> function in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regmod_fit</span><span class="o">.</span><span class="n">fittedvalues</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.580142
+1    3.719121
+2    3.698699
+3    4.361584
+4    5.593971
+5    6.341451
+6    8.431140
+7    9.273893
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -648,6 +818,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.9581414431</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.041858556900000066
 </pre></div>
 </div>
 </div>
@@ -661,10 +836,36 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.580142
+1   -0.719121
+2    0.301301
+3    0.638416
+4    0.406029
+5    0.658549
+6   -0.431140
+7   -0.273893
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;depvar&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">regmod_fit</span><span class="o">.</span><span class="n">fittedvalues</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.580142
+1   -0.719121
+2    0.301301
+3    0.638416
+4    0.406029
+5    0.658549
+6   -0.431140
+7   -0.273893
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -678,6 +879,12 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;residuals&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;residuals&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/2e8ab36510df72afc8095ef18a57392694b6dffe10bbc7e9b652811afae99d43.png" src="../../../_images/2e8ab36510df72afc8095ef18a57392694b6dffe10bbc7e9b652811afae99d43.png" />
 </div>
 </div>
 <ul class="simple">
@@ -710,6 +917,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9473452032007467
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="regression-model-to-estimate-gestation-using-some-combination-of-body-mass-and-longevity">
@@ -731,6 +943,173 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MSW05_Order</th>
+      <th>MSW05_Family</th>
+      <th>MSW05_Genus</th>
+      <th>MSW05_Species</th>
+      <th>MSW05_Binomial</th>
+      <th>1-1_ActivityCycle</th>
+      <th>5-1_AdultBodyMass_g</th>
+      <th>8-1_AdultForearmLen_mm</th>
+      <th>13-1_AdultHeadBodyLen_mm</th>
+      <th>2-1_AgeatEyeOpening_d</th>
+      <th>...</th>
+      <th>26-6_GR_MinLong_dd</th>
+      <th>26-7_GR_MidRangeLong_dd</th>
+      <th>27-1_HuPopDen_Min_n/km2</th>
+      <th>27-2_HuPopDen_Mean_n/km2</th>
+      <th>27-3_HuPopDen_5p_n/km2</th>
+      <th>27-4_HuPopDen_Change</th>
+      <th>28-1_Precip_Mean_mm</th>
+      <th>28-2_Temp_Mean_01degC</th>
+      <th>30-1_AET_Mean_mm</th>
+      <th>30-2_PET_Mean_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Artiodactyla</td>
+      <td>Camelidae</td>
+      <td>Camelus</td>
+      <td>dromedarius</td>
+      <td>Camelus dromedarius</td>
+      <td>3.0</td>
+      <td>492714.47</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>adustus</td>
+      <td>Canis adustus</td>
+      <td>1.0</td>
+      <td>10392.49</td>
+      <td>NaN</td>
+      <td>745.32</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>-17.53</td>
+      <td>13.00</td>
+      <td>0.0</td>
+      <td>35.20</td>
+      <td>1.0</td>
+      <td>0.14</td>
+      <td>90.75</td>
+      <td>236.51</td>
+      <td>922.90</td>
+      <td>1534.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>aureus</td>
+      <td>Canis aureus</td>
+      <td>2.0</td>
+      <td>9658.70</td>
+      <td>NaN</td>
+      <td>827.53</td>
+      <td>7.50</td>
+      <td>...</td>
+      <td>-17.05</td>
+      <td>45.74</td>
+      <td>0.0</td>
+      <td>79.29</td>
+      <td>0.0</td>
+      <td>0.10</td>
+      <td>44.61</td>
+      <td>217.23</td>
+      <td>438.02</td>
+      <td>1358.98</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>latrans</td>
+      <td>Canis latrans</td>
+      <td>2.0</td>
+      <td>11989.10</td>
+      <td>NaN</td>
+      <td>872.39</td>
+      <td>11.94</td>
+      <td>...</td>
+      <td>-168.12</td>
+      <td>-117.60</td>
+      <td>0.0</td>
+      <td>27.27</td>
+      <td>0.0</td>
+      <td>0.06</td>
+      <td>53.03</td>
+      <td>58.18</td>
+      <td>503.02</td>
+      <td>728.37</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>lupus</td>
+      <td>Canis lupus</td>
+      <td>2.0</td>
+      <td>31756.51</td>
+      <td>NaN</td>
+      <td>1055.00</td>
+      <td>14.01</td>
+      <td>...</td>
+      <td>-171.84</td>
+      <td>3.90</td>
+      <td>0.0</td>
+      <td>37.87</td>
+      <td>0.0</td>
+      <td>0.04</td>
+      <td>34.79</td>
+      <td>4.82</td>
+      <td>313.33</td>
+      <td>561.11</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 55 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="disclaimer">
@@ -760,6 +1139,70 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bodymass</th>
+      <th>longevity</th>
+      <th>gestation</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>492714.47</td>
+      <td>480.0</td>
+      <td>386.51</td>
+      <td>Camelus dromedarius</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10392.49</td>
+      <td>137.0</td>
+      <td>65.00</td>
+      <td>Canis adustus</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9658.70</td>
+      <td>192.0</td>
+      <td>61.24</td>
+      <td>Canis aureus</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11989.10</td>
+      <td>262.0</td>
+      <td>61.74</td>
+      <td>Canis latrans</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>31756.51</td>
+      <td>354.0</td>
+      <td>63.50</td>
+      <td>Canis lupus</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s look at the distribution of <code class="docutils literal notranslate"><span class="pre">&quot;bodymass&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;longevity&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;gestation&quot;</span></code>.</p>
 <div class="cell docutils container">
@@ -768,6 +1211,9 @@ document.write(`
                <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/ee89f8cbfd6724b3347fd27892c86488f240b80aa4a3ad795086e373c7c82129.png" src="../../../_images/ee89f8cbfd6724b3347fd27892c86488f240b80aa4a3ad795086e373c7c82129.png" />
 </div>
 </div>
 <p>Last week we had estimated the line with gestation as the dependent variable and longevity as the independent variable.</p>
@@ -780,6 +1226,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/8b6250a3b123eaef1b35333e46d7f5039ff7dc70301128ca94260514aee14b66.png" src="../../../_images/8b6250a3b123eaef1b35333e46d7f5039ff7dc70301128ca94260514aee14b66.png" />
+</div>
 </div>
 <p>Now let’s think about the line with gestation as the dependent variable and body mass as the independent variable.</p>
 <div class="cell docutils container">
@@ -789,6 +1238,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gestation (days)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d00d90606a90d8aabc009cbc781f1e005fd3adcae6593e080e9ffc5ebd3ce5bb.png" src="../../../_images/d00d90606a90d8aabc009cbc781f1e005fd3adcae6593e080e9ffc5ebd3ce5bb.png" />
 </div>
 </div>
 </section>
@@ -814,6 +1266,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/6dc0d22d4fcafd3dba31d5c5bd2353d4f96f704ad957b0e990e594dafe028cd1.png" src="../../../_images/6dc0d22d4fcafd3dba31d5c5bd2353d4f96f704ad957b0e990e594dafe028cd1.png" />
+</div>
 </div>
 <p>We can compute <span class="math notranslate nohighlight">\(log(x)\)</span> of each <code class="docutils literal notranslate"><span class="pre">&quot;bodymass&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;longevity&quot;</span></code> using <code class="docutils literal notranslate"><span class="pre">np.log()</span></code>.</p>
 <div class="cell docutils container">
@@ -822,6 +1277,58 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bodymass</th>
+      <th>longevity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13.107685</td>
+      <td>6.173786</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.248839</td>
+      <td>4.919981</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9.175614</td>
+      <td>5.257495</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.391753</td>
+      <td>5.568345</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.365853</td>
+      <td>5.869297</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -839,6 +1346,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/6492d58a214f35e38b170d42d02b44efe1a91f673d78047716b06c0a4b20da7f.png" src="../../../_images/6492d58a214f35e38b170d42d02b44efe1a91f673d78047716b06c0a4b20da7f.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -847,6 +1357,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gestation (days)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/aead15c0b90b9647cc56522184d8dc7abac572bcd05e85e60aeb8610984c5024.png" src="../../../_images/aead15c0b90b9647cc56522184d8dc7abac572bcd05e85e60aeb8610984c5024.png" />
 </div>
 </div>
 <p>It will also be helpful to drop missing values.  This can be done using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">dropna</span></code> with the parameter <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>, so that it modifies the existing <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
@@ -860,6 +1373,91 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bodymass         0
+longevity        0
+gestation        0
+name             0
+bodymass_log     0
+longevity_log    0
+dtype: int64
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bodymass</th>
+      <th>longevity</th>
+      <th>gestation</th>
+      <th>name</th>
+      <th>bodymass_log</th>
+      <th>longevity_log</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>492714.47</td>
+      <td>480.0</td>
+      <td>386.51</td>
+      <td>Camelus dromedarius</td>
+      <td>13.107685</td>
+      <td>6.173786</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10392.49</td>
+      <td>137.0</td>
+      <td>65.00</td>
+      <td>Canis adustus</td>
+      <td>9.248839</td>
+      <td>4.919981</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9658.70</td>
+      <td>192.0</td>
+      <td>61.24</td>
+      <td>Canis aureus</td>
+      <td>9.175614</td>
+      <td>5.257495</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11989.10</td>
+      <td>262.0</td>
+      <td>61.74</td>
+      <td>Canis latrans</td>
+      <td>9.391753</td>
+      <td>5.568345</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>31756.51</td>
+      <td>354.0</td>
+      <td>63.50</td>
+      <td>Canis lupus</td>
+      <td>10.365853</td>
+      <td>5.869297</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -889,6 +1487,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>   39.0398</td> <td>    4.341</td> <td>    8.993</td> <td> 0.000</td> <td>   30.519</td> <td>   47.561</td>
+</tr>
+<tr>
+  <th>longevity</th> <td>    0.4302</td> <td>    0.016</td> <td>   27.515</td> <td> 0.000</td> <td>    0.400</td> <td>    0.461</td>
+</tr>
+</table></div></div>
 </div>
 <ul class="simple">
 <li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = 39.04 + 0.43\times \texttt{longevity}\)</span></p></li>
@@ -907,6 +1517,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.48342601039767696
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,6 +1531,12 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Residuals&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/4631268c1cdb31c5f4de07fceb122ed1510f64b5424151695cdbc51e1cea3451.png" src="../../../_images/4631268c1cdb31c5f4de07fceb122ed1510f64b5424151695cdbc51e1cea3451.png" />
 </div>
 </div>
 <p><em>What do you notice?</em></p>
@@ -932,6 +1553,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>     <td> -279.9515</td> <td>   16.054</td> <td>  -17.439</td> <td> 0.000</td> <td> -311.463</td> <td> -248.440</td>
+</tr>
+<tr>
+  <th>longevity_log</th> <td>   81.9424</td> <td>    3.154</td> <td>   25.977</td> <td> 0.000</td> <td>   75.750</td> <td>   88.134</td>
+</tr>
+</table></div></div>
 </div>
 <ul class="simple">
 <li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = -280 + 81.94\times \texttt{log.longevity}\)</span></p></li>
@@ -946,6 +1579,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4547734755983328
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -956,11 +1594,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/c02d8b97f38b571ef1d9f4340b1d9d9f136e687a44222bc2ff78542c0eb80317.png" src="../../../_images/c02d8b97f38b571ef1d9f4340b1d9d9f136e687a44222bc2ff78542c0eb80317.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model 1 R squared:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">reg_longgest_fit</span><span class="o">.</span><span class="n">rsquared</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model 2 R squared:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">reg_longgestlog_fit</span><span class="o">.</span><span class="n">rsquared</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model 1 R squared: 0.483
+Model 2 R squared: 0.455
 </pre></div>
 </div>
 </div>
@@ -979,6 +1626,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/9bd320ac453c54ec5952327399f244a5f236e2cdd4fd6345699fe23ebe5789c3.png" src="../../../_images/9bd320ac453c54ec5952327399f244a5f236e2cdd4fd6345699fe23ebe5789c3.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -989,6 +1639,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>  128.4941</td> <td>    3.846</td> <td>   33.412</td> <td> 0.000</td> <td>  120.945</td> <td>  136.043</td>
+</tr>
+<tr>
+  <th>bodymass</th>  <td> 3.078e-06</td> <td> 5.82e-07</td> <td>    5.291</td> <td> 0.000</td> <td> 1.94e-06</td> <td> 4.22e-06</td>
+</tr>
+</table></div></div>
 </div>
 <ul class="simple">
 <li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = 128 + 0.00000308 \times \texttt{body.mass}\)</span></p></li>
@@ -997,6 +1659,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_gestbm_fit</span><span class="o">.</span><span class="n">rsquared</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03344474332822689
 </pre></div>
 </div>
 </div>
@@ -1009,6 +1676,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/e13b4ca70e20f9fd34124a02918538679baee0f96e7f9caed8e18a02bc44192f.png" src="../../../_images/e13b4ca70e20f9fd34124a02918538679baee0f96e7f9caed8e18a02bc44192f.png" />
 </div>
 </div>
 <p>The same issue in the scatterplot is showing in the residual plot. But specifically, there is inconsistent variance so this model is not appropriate.</p>
@@ -1024,6 +1694,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/81a1e6d89fa4f8fd4bb83adea4fc80bec58585481d26fc39575658c08ac6ed12.png" src="../../../_images/81a1e6d89fa4f8fd4bb83adea4fc80bec58585481d26fc39575658c08ac6ed12.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1034,6 +1707,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+        <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>    <td>  -65.2383</td> <td>    6.322</td> <td>  -10.318</td> <td> 0.000</td> <td>  -77.649</td> <td>  -52.828</td>
+</tr>
+<tr>
+  <th>bodymass_log</th> <td>   24.8855</td> <td>    0.738</td> <td>   33.706</td> <td> 0.000</td> <td>   23.436</td> <td>   26.335</td>
+</tr>
+</table></div></div>
 </div>
 <ul class="simple">
 <li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = -65 + 25 \times \texttt{log.body.mass}\)</span></p></li>
@@ -1042,6 +1727,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_gestbmlog_fit</span><span class="o">.</span><span class="n">rsquared</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5840782422545432
 </pre></div>
 </div>
 </div>
@@ -1054,6 +1744,12 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Residuals&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/858726e3266c96c02ef550d331c87f7dcf4d436c8f2d8924535840249914b6a2.png" src="../../../_images/858726e3266c96c02ef550d331c87f7dcf4d436c8f2d8924535840249914b6a2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1073,6 +1769,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/609f24b627ef9b14233960a9c3338f81c85a6a1237f4351df77921f6cddbcc3a.png" src="../../../_images/609f24b627ef9b14233960a9c3338f81c85a6a1237f4351df77921f6cddbcc3a.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1082,6 +1781,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gestation (days)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/81a1e6d89fa4f8fd4bb83adea4fc80bec58585481d26fc39575658c08ac6ed12.png" src="../../../_images/81a1e6d89fa4f8fd4bb83adea4fc80bec58585481d26fc39575658c08ac6ed12.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1093,9 +1795,24 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+        <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>    <td>  -50.6390</td> <td>    6.057</td> <td>   -8.360</td> <td> 0.000</td> <td>  -62.529</td> <td>  -38.749</td>
+</tr>
+<tr>
+  <th>longevity</th>    <td>    0.1978</td> <td>    0.018</td> <td>   10.898</td> <td> 0.000</td> <td>    0.162</td> <td>    0.233</td>
+</tr>
+<tr>
+  <th>bodymass_log</th> <td>   17.6879</td> <td>    0.955</td> <td>   18.522</td> <td> 0.000</td> <td>   15.813</td> <td>   19.562</td>
+</tr>
+</table></div></div>
 </div>
 <ul class="simple">
-<li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = \text{\_\_\_} + \text{\_\_\_} \times \texttt{longevity}+ \text{\_\_\_} \times \texttt{log.body.mass}\)</span></p></li>
+<li><p>The regression equation is: <span class="math notranslate nohighlight">\(\texttt{gestation} = \text{___} + \text{___} \times \texttt{longevity}+ \text{___} \times \texttt{log.body.mass}\)</span></p></li>
 <li><p>The <strong>slope</strong> of longevity indicates that for every 1 month <strong>increase</strong> in longevity, <em>while keeping body mass constant</em>, we expect the gestational period to increase by _____ days.</p></li>
 <li><p>The <strong>slope</strong> of log body mass indicates that for every 1 unit <strong>increase</strong> in log body mass, <em>while keeping longevity length constant</em>, we expect the gestational period to increase by _____ days.</p></li>
 <li><p>The <strong>y-intercept</strong> indicates that when longevity is 0 months and log body mass is 0, gestational period is _____ days.</p></li>
@@ -1109,6 +1826,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6373811761507796
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1118,6 +1840,12 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Residuals&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/e7b931271aed810f1610fc2b7096d960fed32463d4a8f2fc92d3283a5ad1368c.png" src="../../../_images/e7b931271aed810f1610fc2b7096d960fed32463d4a8f2fc92d3283a5ad1368c.png" />
 </div>
 </div>
 <p>The residuals of model 5 aren’t great. They are showing similar issues to the residual plots of models 1 and 4.</p>
@@ -1177,7 +1905,7 @@ document.write(`
 <section id="root-mean-squared-error-rmse">
 <h3>Root Mean Squared Error (RMSE)<a class="headerlink" href="#root-mean-squared-error-rmse" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[RMSE = \sqrt{\frac{\sum_{i=1}^n (\hat{y}_i-y_i)}{n}}\]</div>
+\[RMSE = \sqrt{\frac{\sum_{i=1}^n (\hat{y}_i-y_i)^2}{n}}\]</div>
 <p>i.e., the “average” of the residuals.</p>
 <ul class="simple">
 <li><p>We want RMSE to be small.</p></li>
@@ -1196,11 +1924,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=5, step=1)
+</pre></div>
+</div>
+</div>
 </div>
 <p>A Boolean array that is <code class="docutils literal notranslate"><span class="pre">True</span></code> if the index is <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True, False, False, False])
 </pre></div>
 </div>
 </div>
@@ -1212,6 +1950,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True,  True,  True])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1219,6 +1962,44 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="creating-training-and-test-data-sets-from-a-single-dataset">
@@ -1256,6 +2037,13 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">reg_df_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">reg_df_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(811, 6)
+(608, 6)
+(203, 6)
 </pre></div>
 </div>
 </div>
@@ -1300,16 +2088,38 @@ document.write(`
 
 <span class="c1"># compute the accuracy of these predictions</span>
 <span class="n">rmse</span><span class="p">(</span><span class="n">predvalues_train</span><span class="p">,</span>          <span class="c1"># predicted values</span>
-     <span class="n">reg_df_train</span><span class="p">[</span><span class="s2">&quot;longevity&quot;</span><span class="p">])</span> <span class="c1"># observed values</span>
+     <span class="n">reg_df_train</span><span class="p">[</span><span class="s2">&quot;gestation&quot;</span><span class="p">])</span> <span class="c1"># observed values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.00487154699478
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># computing it &quot;manually&quot;</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>                   <span class="c1"># root</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>               <span class="c1"># mean</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span>          <span class="c1"># squared</span>
+            <span class="n">predvalues_train</span> <span class="o">-</span> <span class="n">reg_df_train</span><span class="p">[</span><span class="s2">&quot;gestation&quot;</span><span class="p">],</span> <span class="c1"># error</span>
+        <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.00487154699478
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>The observed longevity deviate from the predicted longevity for each species by 4 months in the training set.</p></li>
+<li><p>The observed gestational periods deviate from the predictted values for each species by 78 days in the training set.</p></li>
 <li><p>Is this an acceptable prediction error?</p></li>
 <li><p>Let’s examine the accuracy of the linear regression model on the test set</p></li>
-<li><p>First compute the predicted values using the training data.</p></li>
+<li><p>First compute the predicted values using the test data.</p></li>
 </ul>
 </section>
 <section id="step-5-evaluate-the-accuracy-of-regression-model-on-the-test-data-using-root-mean-squared-error">
@@ -1329,7 +2139,12 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rmse</span><span class="p">(</span><span class="n">predvalues_test</span><span class="p">,</span> <span class="n">reg_df_test</span><span class="p">[</span><span class="s2">&quot;longevity&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rmse</span><span class="p">(</span><span class="n">predvalues_test</span><span class="p">,</span> <span class="n">reg_df_test</span><span class="p">[</span><span class="s2">&quot;gestation&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>84.78871387646602
 </pre></div>
 </div>
 </div>
