@@ -63,12 +63,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week05/homework/Homework_5';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week05/homework/Homework_5_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Homework 5 - Investigating Mammalian Fecundity and Conservation" href="Homework_5_key.html" />
-    <link rel="prev" title="Class 5: Statistical variables, distributions, life history and conservation" href="../lecture/lecture5.html" />
+    <link rel="next" title="Week 7: The Pandas Library" href="../../week07/lecture/lecture7.html" />
+    <link rel="prev" title="Homework 5 - Investigating Mammalian Fecundity and Conservation" href="Homework_5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,8 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture5.html">Tomo's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 5 Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Homework_5_key.html">Homework 5 Sample Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_5.html">Week 5 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 5 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="nav bd-sidenav">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week05/homework/Homework_5.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week05/homework/Homework_5_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week05/homework/Homework_5.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week05/homework/Homework_5_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -488,6 +488,22 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fecundity.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">lh_header</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lh_data</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lh_header</span><span class="p">)</span>
+<span class="n">lh_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>order,genus_species,maturity_d,interbirth_d,longevity_m,litter_size_ind
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Artiodactyla,Camelus_dromedarius,1947.94,614.41,480.0,0.98\n&#39;
 </pre></div>
 </div>
 </div>
@@ -517,6 +533,21 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">max_fecund</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lh_data</span><span class="p">:</span>
+    <span class="n">line_dat</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">maturity_yr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">365</span>
+        <span class="n">interbirth_yr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">365</span>
+        <span class="n">longevity_yr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">/</span> <span class="mi">12</span>
+        <span class="n">litter_size_ind</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+        <span class="n">fecund</span> <span class="o">=</span> <span class="p">(</span><span class="n">longevity_yr</span> <span class="o">-</span> <span class="n">maturity_yr</span><span class="p">)</span> <span class="o">/</span> <span class="n">interbirth_yr</span> <span class="o">*</span> <span class="n">litter_size_ind</span>
+        <span class="n">max_fecund</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">fecund</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
 </div>
@@ -526,7 +557,9 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <section id="problem-1c-interpret">
 <h3>Problem 1c. Interpret<a class="headerlink" href="#problem-1c-interpret" title="Permalink to this heading">#</a></h3>
 <p>Please explain what our maximum fecundity metric is measuring <strong>(2pts)</strong>. In what units is it expressed <strong>(2pts)</strong>? Can you think of any reasons the metric might be inaccurate <strong>(optional)</strong>?</p>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><em>Sample Solution:</em></p>
+<p>This metric estimates the maximum possible number of offspring an individual with in each species might be able to have. It is expressed as number of individuals.</p>
+<p>One possible issue could be that the metric doesn’t take into account any periods where adult females don’t give birth to children, for example, menopause in humans. Another possible problem is that it doesn’t take into account the length of gestation time– how long individuals grow in the womb.</p>
 </section>
 </section>
 <section id="problem-2-iucn-conservation-risk">
@@ -538,6 +571,21 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;iucn_status.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">iucn_header</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">iucn_data</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">iucn_header</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iucn_data</span><span class="p">[</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>order,species,iucn_status
+
+Chiroptera,Acerodon_jubatus,EN
 </pre></div>
 </div>
 </div>
@@ -559,7 +607,7 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell to define iucn_map</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Include this code in handout</span>
 
 <span class="n">iucn_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;LC&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;NT&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="s1">&#39;VU&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="s1">&#39;EN&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span><span class="s1">&#39;CR&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span><span class="s1">&#39;EW&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span><span class="s1">&#39;EX&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span><span class="s1">&#39;DD&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 </pre></div>
@@ -569,6 +617,18 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">at_risk</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">iucn_data</span><span class="p">:</span>
+    <span class="n">line_dat</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">iucn_lev</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">iucn_num</span> <span class="o">=</span> <span class="n">iucn_map</span><span class="p">[</span><span class="n">iucn_lev</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">iucn_num</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">at_risk</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">at_risk</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 </div>
@@ -580,6 +640,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="k">def</span> <span class="nf">calc_mean</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">tot</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mean</span>
 </pre></div>
 </div>
 </div>
@@ -592,6 +657,20 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">threat_fecund</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">unthreat_fecund</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="n">max_fecund</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">threatened</span> <span class="o">=</span> <span class="n">at_risk</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span>
+        <span class="n">fecund_val</span> <span class="o">=</span> <span class="n">max_fecund</span><span class="p">[</span><span class="n">sp</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">threatened</span><span class="p">:</span>
+            <span class="n">threat_fecund</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fecund_val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">unthreat_fecund</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fecund_val</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
 </div>
@@ -603,6 +682,9 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">mean_threat_fecund</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">threat_fecund</span><span class="p">)</span>
+<span class="n">mean_unthreat_fecund</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">unthreat_fecund</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -614,6 +696,12 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.66147992325452
+62.67940870955299
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="problem-3c-interpret">
@@ -622,7 +710,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <li><p>Do threatened species or non-threatened species tend to have more potential offspring over their lifespan <strong>(1 pt)</strong>?</p></li>
 <li><p>Please speculate on why this might be the case <strong>(2pt)</strong>.</p></li>
 </ol>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><em>Sample Solution:</em></p>
+<ol class="arabic simple">
+<li><p>Species that are threatened can have less than half of the offspring that non-threatened species.</p></li>
+<li><p>It might be the case that, when the number of deaths increases within a species, those species that have fewer offspring are more likely to become threatened because they are less capable of replenishing those deaths in the population. They may become endangered as a result.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -656,20 +748,20 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture5.html"
+       href="Homework_5.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class 5: Statistical variables, distributions, life history and conservation</p>
+        <p class="prev-next-title">Homework 5 - Investigating Mammalian Fecundity and Conservation</p>
       </div>
     </a>
     <a class="right-next"
-       href="Homework_5_key.html"
+       href="../../week07/lecture/lecture7.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 5 - Investigating Mammalian Fecundity and Conservation</p>
+        <p class="prev-next-title">Week 7: The Pandas Library</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
