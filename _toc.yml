@@ -108,3 +108,8 @@ parts:
       title: Week 11 Homework
     - file: weekly-materials/week11/exercise/exercise11.ipynb
       title: Week 11 Exercises (Practice)
+  
+  - caption: Week 12
+    chapters:
+    - file: weekly-materials/week12/lecture/lecture12.ipynb
+      title: Moon's Notebook
