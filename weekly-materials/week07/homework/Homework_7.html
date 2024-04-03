@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Homework 7 &#8212; Computation and Data Science for the Life and Physical Sciences</title>
+    <title>Homework 7: Data Wrangling – Understanding U.S. Covid Statistics &#8212; Computation and Data Science for the Life and Physical Sciences</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Homework 7" href="Homework_7_key.html" />
+    <link rel="next" title="Homework 7: Data Wrangling – Understanding U.S. Covid Statistics" href="Homework_7_key.html" />
     <link rel="prev" title="Week 7: The Pandas Library" href="../lecture/lecture7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,14 +198,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture7.html">KP's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 7</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Homework_7_key.html">Homework 7</a></li>
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 7 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_7_key.html">Homework 7 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
 <ul class="nav bd-sidenav">
@@ -411,7 +405,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Homework 7</h1>
+    <h1>Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -421,10 +415,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Homework 7</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-wrangling-understanding-u-s-covid-statistics">Data Wrangling – Understanding U.S. Covid Statistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-read-in-the-data-file">Problem 1: Read in the data file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-cleaning-the-data">Problem 2: Cleaning the data</a></li>
@@ -446,9 +438,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6-analysis">Problem 6: Analysis</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -459,14 +448,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="homework-7">
-<h1>Homework 7<a class="headerlink" href="#homework-7" title="Permalink to this heading">#</a></h1>
-</section>
-<section id="data-wrangling-understanding-u-s-covid-statistics">
-<h1>Data Wrangling – Understanding U.S. Covid Statistics<a class="headerlink" href="#data-wrangling-understanding-u-s-covid-statistics" title="Permalink to this heading">#</a></h1>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-7-data-wrangling-understanding-u-s-covid-statistics">
+<h1>Homework 7: Data Wrangling – Understanding U.S. Covid Statistics<a class="headerlink" href="#homework-7-data-wrangling-understanding-u-s-covid-statistics" title="Permalink to this heading">#</a></h1>
 <section id="logistics">
-<h1>Logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h1>
+<h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h2>
 <p><strong>Due date</strong>: The homework is due 17:00 (5:00pm) on Tuesday, March 5.</p>
 <p>You will submit your work on <a class="reference external" href="https://markus-ds.teach.cs.toronto.edu">MarkUs</a>.
 To submit your work:</p>
@@ -476,14 +461,15 @@ To submit your work:</p>
 </ol>
 <p>All homeworks will take place in a Jupyter notebook (like this one). When you are done, you will download this notebook and submit it to MarkUs.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://www.genderscilab.org">GenderSci Lab</a> is “dedicated to generating feminist concepts, methods and theories for scientific research on sex and gender.”</p>
 <p>One of their research projects explores the impact of COVID-19 on women and men.
 In this lab, we are using a set of data that is based on the information in their <a class="reference external" href="https://genderscilab.org/gender-and-sex-in-covid19/#DataTable">US Gender/Sex COVID-19 Data Tracker</a>. (You may need to search for “US Gender/Sex COVID-19 Data Tables”.)</p>
 <p>The table shows various pieces of information about US state COVID-19 cases and deaths counted by sex, including the total case count, male case count, and female case counts, as well as the death counts and percentages. Here’s a snippet:</p>
 <p><img alt="US Gender/Sex COVID-19 Data Tables" src="../../../_images/tableclip.png" /></p>
 <p>We have added one more column of data to this, the state population. You’ll find out more about this data below.</p>
+</section>
 <section id="question">
 <h2>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h2>
 <p>The question you’re answering in this homework:</p>
@@ -700,7 +686,7 @@ To do this:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 7</p>
+        <p class="prev-next-title">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -719,10 +705,8 @@ To do this:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Homework 7</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-wrangling-understanding-u-s-covid-statistics">Data Wrangling – Understanding U.S. Covid Statistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">Logistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-read-in-the-data-file">Problem 1: Read in the data file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-cleaning-the-data">Problem 2: Cleaning the data</a></li>
@@ -744,9 +728,6 @@ To do this:</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6-analysis">Problem 6: Analysis</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
