@@ -28,8 +28,8 @@ parts:
       title: Prof. Vishnubhotla's Notebook
     - file: weekly-materials/week01/homework/Homework_1.ipynb
       title: Week 1 Homework
-#    - file: weekly-materials/week01/homework/Homework_1_key.ipynb
-#      title: Homework 1 Sample Solution
+    - file: weekly-materials/week01/homework/Homework_1_key.ipynb
+      title: Homework 1 Sample Solution
 
   - caption: Week 2
     chapters:
@@ -37,8 +37,8 @@ parts:
       title: Tomo's Notebook
     - file: weekly-materials/week02/homework/Homework_2.ipynb
       title: Week 2 Homework
-#    - file: weekly-materials/week02/homework/Homework_2_key.ipynb
-#      title: Homework 2 Sample Solution
+    - file: weekly-materials/week02/homework/Homework_2_key.ipynb
+      title: Homework 2 Sample Solution
 
   - caption: Week 3
     chapters:
@@ -46,8 +46,8 @@ parts:
       title: Tomo's Notebook
     - file: weekly-materials/week03/homework/Homework_3.ipynb
       title: Week 3 Homework
-#    - file: weekly-materials/week03/homework/Homework_3_key.ipynb
-#      title: Homework 3 Sample Solution
+    - file: weekly-materials/week03/homework/Homework_3_key.ipynb
+      title: Homework 3 Sample Solution
 
   - caption: Week 4
     chapters:
@@ -55,6 +55,8 @@ parts:
       title: Tomo's Notebook
     - file: weekly-materials/week04/homework/Homework_4.ipynb
       title: Week 4 Homework
+    - file: weekly-materials/week04/homework/Homework_4_key.ipynb
+      title: Homework 4 Sample Solution
 
   - caption: Week 5
     chapters:
@@ -62,12 +64,16 @@ parts:
       title: Tomo's Notebook
     - file: weekly-materials/week05/homework/Homework_5.ipynb
       title: Week 5 Homework
+      
   - caption: Week 7
     chapters:
     - file: weekly-materials/week07/lecture/lecture7.ipynb
       title: KP's Notebook
     - file: weekly-materials/week07/homework/Homework_7.ipynb
       title: Week 7 Homework
+    - file: weekly-materials/week07/homework/Homework_7_key.ipynb
+      title: Homework 7 Sample Solution
+      
   - caption: Final Project
     chapters:
     - file: project/project_proposal.ipynb
@@ -83,6 +89,8 @@ parts:
       title: KP's Notebook
     - file: weekly-materials/week08/homework/Homework_8.ipynb
       title: Week 8 Homework
+    - file: weekly-materials/week08/homework/Homework_8_key.ipynb
+      title: Homework 8 Sample Solution
   
   - caption: Week 9
     chapters:
@@ -92,6 +100,8 @@ parts:
       title: Week 9 Lab
     - file: weekly-materials/week09/homework/Homework_9.ipynb
       title: Week 9 Homework
+    - file: weekly-materials/week09/homework/Homework_9_key.ipynb
+      title: Homework 9 Sample Solution
 
   - caption: Week 10
     chapters:
@@ -99,6 +109,8 @@ parts:
       title: Moon's Notebook
     - file: weekly-materials/week10/homework/Homework_10.ipynb
       title: Week 10 Homework
+    - file: weekly-materials/week10/homework/Homework_10_key.ipynb
+      title: Homework 10 Sample Solution
 
   - caption: Week 11
     chapters:
@@ -108,6 +120,8 @@ parts:
       title: Week 11 Homework
     - file: weekly-materials/week11/exercise/exercise11.ipynb
       title: Week 11 Exercises (Practice)
+    - file: weekly-materials/week11/homework/Homework_11_key.ipynb
+      title: Homework 11 Sample Solution
   
   - caption: Week 12
     chapters:
