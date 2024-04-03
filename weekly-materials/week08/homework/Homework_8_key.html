@@ -63,12 +63,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week08/homework/Homework_8';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week08/homework/Homework_8_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Homework 8: Investigating Mammalian Fecundity and Conservation using Filtering, Joins, and Arithmetic" href="Homework_8_key.html" />
-    <link rel="prev" title="Week 8: Merging, Grouping, Plotting" href="../lecture/lecture8.html" />
+    <link rel="next" title="Week 9: Hypothesis Testing" href="../../week09/lecture/lecture9.html" />
+    <link rel="prev" title="Homework 8: Investigating Mammalian Fecundity and Conservation using Filtering, Joins, and Arithmetic" href="Homework_8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,8 +211,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture8.html">KP's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 8 Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Homework_8_key.html">Homework 8 Sample Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_8.html">Week 8 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 8 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
 <ul class="nav bd-sidenav">
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week08/homework/Homework_8.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week08/homework/Homework_8_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week08/homework/Homework_8.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week08/homework/Homework_8_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -493,18 +493,347 @@ To submit your work:</p>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;mode.chained_assignment&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> 
 
 <span class="c1"># Write your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check your work</span>
+<span class="n">pantheria_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;PanTHERIA_WR05_Aug2008.csv&#39;</span><span class="p">)</span>
+<span class="n">iucn_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;phylacine.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Check your work</span>
 <span class="n">display</span><span class="p">(</span><span class="n">pantheria_raw</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="n">display</span><span class="p">(</span><span class="n">iucn_raw</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MSW05_Order</th>
+      <th>MSW05_Family</th>
+      <th>MSW05_Genus</th>
+      <th>MSW05_Species</th>
+      <th>MSW05_Binomial</th>
+      <th>1-1_ActivityCycle</th>
+      <th>5-1_AdultBodyMass_g</th>
+      <th>8-1_AdultForearmLen_mm</th>
+      <th>13-1_AdultHeadBodyLen_mm</th>
+      <th>2-1_AgeatEyeOpening_d</th>
+      <th>...</th>
+      <th>26-6_GR_MinLong_dd</th>
+      <th>26-7_GR_MidRangeLong_dd</th>
+      <th>27-1_HuPopDen_Min_n/km2</th>
+      <th>27-2_HuPopDen_Mean_n/km2</th>
+      <th>27-3_HuPopDen_5p_n/km2</th>
+      <th>27-4_HuPopDen_Change</th>
+      <th>28-1_Precip_Mean_mm</th>
+      <th>28-2_Temp_Mean_01degC</th>
+      <th>30-1_AET_Mean_mm</th>
+      <th>30-2_PET_Mean_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Artiodactyla</td>
+      <td>Camelidae</td>
+      <td>Camelus</td>
+      <td>dromedarius</td>
+      <td>Camelus dromedarius</td>
+      <td>3</td>
+      <td>492714.47</td>
+      <td>-999.0</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+      <td>...</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+      <td>-999</td>
+      <td>-999.00</td>
+      <td>-999.0</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+      <td>-999.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>adustus</td>
+      <td>Canis adustus</td>
+      <td>1</td>
+      <td>10392.49</td>
+      <td>-999.0</td>
+      <td>745.32</td>
+      <td>-999.00</td>
+      <td>...</td>
+      <td>-17.53</td>
+      <td>13.00</td>
+      <td>0</td>
+      <td>35.20</td>
+      <td>1.0</td>
+      <td>0.14</td>
+      <td>90.75</td>
+      <td>236.51</td>
+      <td>922.90</td>
+      <td>1534.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>aureus</td>
+      <td>Canis aureus</td>
+      <td>2</td>
+      <td>9658.70</td>
+      <td>-999.0</td>
+      <td>827.53</td>
+      <td>7.50</td>
+      <td>...</td>
+      <td>-17.05</td>
+      <td>45.74</td>
+      <td>0</td>
+      <td>79.29</td>
+      <td>0.0</td>
+      <td>0.10</td>
+      <td>44.61</td>
+      <td>217.23</td>
+      <td>438.02</td>
+      <td>1358.98</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>latrans</td>
+      <td>Canis latrans</td>
+      <td>2</td>
+      <td>11989.10</td>
+      <td>-999.0</td>
+      <td>872.39</td>
+      <td>11.94</td>
+      <td>...</td>
+      <td>-168.12</td>
+      <td>-117.60</td>
+      <td>0</td>
+      <td>27.27</td>
+      <td>0.0</td>
+      <td>0.06</td>
+      <td>53.03</td>
+      <td>58.18</td>
+      <td>503.02</td>
+      <td>728.37</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canidae</td>
+      <td>Canis</td>
+      <td>lupus</td>
+      <td>Canis lupus</td>
+      <td>2</td>
+      <td>31756.51</td>
+      <td>-999.0</td>
+      <td>1055.00</td>
+      <td>14.01</td>
+      <td>...</td>
+      <td>-171.84</td>
+      <td>3.90</td>
+      <td>0</td>
+      <td>37.87</td>
+      <td>0.0</td>
+      <td>0.04</td>
+      <td>34.79</td>
+      <td>4.82</td>
+      <td>313.33</td>
+      <td>561.11</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 55 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Binomial.1.2</th>
+      <th>Order.1.2</th>
+      <th>Family.1.2</th>
+      <th>Genus.1.2</th>
+      <th>Species.1.2</th>
+      <th>Terrestrial</th>
+      <th>Marine</th>
+      <th>Freshwater</th>
+      <th>Aerial</th>
+      <th>Life.Habit.Method</th>
+      <th>...</th>
+      <th>Mass.Comparison</th>
+      <th>Mass.Comparison.Source</th>
+      <th>Island.Endemicity</th>
+      <th>IUCN.Status.1.2</th>
+      <th>Added.IUCN.Status.1.2</th>
+      <th>Diet.Plant</th>
+      <th>Diet.Vertebrate</th>
+      <th>Diet.Invertebrate</th>
+      <th>Diet.Method</th>
+      <th>Diet.Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Abditomys_latidens</td>
+      <td>Rodentia</td>
+      <td>Muridae</td>
+      <td>Abditomys</td>
+      <td>latidens</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Occurs only on isolated islands</td>
+      <td>DD</td>
+      <td>No</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported 000 Species</td>
+      <td>Wilman, H., et al. 2014. EltonTraits 1.0: spec...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abeomelomys_sevia</td>
+      <td>Rodentia</td>
+      <td>Muridae</td>
+      <td>Abeomelomys</td>
+      <td>sevia</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Occurs on large land bridge islands</td>
+      <td>LC</td>
+      <td>No</td>
+      <td>78</td>
+      <td>3</td>
+      <td>19</td>
+      <td>Imputed 000 Species</td>
+      <td>PHYLACINE 1.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abrawayaomys_ruschii</td>
+      <td>Rodentia</td>
+      <td>Cricetidae</td>
+      <td>Abrawayaomys</td>
+      <td>ruschii</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Occurs on mainland</td>
+      <td>LC</td>
+      <td>No</td>
+      <td>88</td>
+      <td>1</td>
+      <td>11</td>
+      <td>Imputed 000 Species</td>
+      <td>PHYLACINE 1.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abrocoma_bennettii</td>
+      <td>Rodentia</td>
+      <td>Abrocomidae</td>
+      <td>Abrocoma</td>
+      <td>bennettii</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Occurs on mainland</td>
+      <td>LC</td>
+      <td>No</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported 000 Species</td>
+      <td>Wilman, H., et al. 2014. EltonTraits 1.0: spec...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abrocoma_boliviensis</td>
+      <td>Rodentia</td>
+      <td>Abrocomidae</td>
+      <td>Abrocoma</td>
+      <td>boliviensis</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Occurs on mainland</td>
+      <td>CR</td>
+      <td>No</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Reported 000 Species</td>
+      <td>Wilman, H., et al. 2014. EltonTraits 1.0: spec...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="problem-2-cleaning-the-data">
@@ -554,13 +883,103 @@ Store the resulting <code class="docutils literal notranslate"><span class="pre"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">important_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MSW05_Order&#39;</span><span class="p">,</span> <span class="s1">&#39;MSW05_Binomial&#39;</span><span class="p">,</span> <span class="s1">&#39;23-1_SexualMaturityAge_d&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;14-1_InterbirthInterval_d&#39;</span><span class="p">,</span> <span class="s1">&#39;17-1_MaxLongevity_m&#39;</span><span class="p">,</span> <span class="s1">&#39;15-1_LitterSize&#39;</span><span class="p">]</span>
+<span class="n">pantheria_data</span> <span class="o">=</span> <span class="n">pantheria_raw</span><span class="p">[</span><span class="n">important_columns</span><span class="p">]</span>
+
+<span class="n">pantheria_new_column_names</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;MSW05_Order&#39;</span><span class="p">:</span> <span class="s1">&#39;Order&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;MSW05_Binomial&#39;</span><span class="p">:</span> <span class="s1">&#39;Genus_Species&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;23-1_SexualMaturityAge_d&#39;</span><span class="p">:</span> <span class="s1">&#39;Age to Maturity (days)&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;14-1_InterbirthInterval_d&#39;</span><span class="p">:</span> <span class="s1">&#39;Interbirth Interval (days)&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;17-1_MaxLongevity_m&#39;</span><span class="p">:</span> <span class="s1">&#39;Max Longevity (months)&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;15-1_LitterSize&#39;</span><span class="p">:</span> <span class="s1">&#39;Litter Size&#39;</span><span class="p">}</span>
+<span class="n">pantheria_data_renamed</span> <span class="o">=</span> <span class="n">pantheria_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">pantheria_new_column_names</span><span class="p">)</span>
+
+<span class="n">pantheria_data_converted</span> <span class="o">=</span> <span class="n">pantheria_data_renamed</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
+
+<span class="n">pantheria_data_clean</span> <span class="o">=</span> <span class="n">pantheria_data_converted</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">pantheria_data_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Artiodactyla</td>
+      <td>Camelus dromedarius</td>
+      <td>1947.94</td>
+      <td>614.41</td>
+      <td>480.0</td>
+      <td>0.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canis adustus</td>
+      <td>249.88</td>
+      <td>&lt;NA&gt;</td>
+      <td>137.0</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canis aureus</td>
+      <td>371.23</td>
+      <td>365.0</td>
+      <td>192.0</td>
+      <td>3.74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canis latrans</td>
+      <td>372.9</td>
+      <td>365.0</td>
+      <td>262.0</td>
+      <td>5.72</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canis lupus</td>
+      <td>679.37</td>
+      <td>365.0</td>
+      <td>354.0</td>
+      <td>4.98</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="problem-2b-cleaning-the-iucn-data">
@@ -572,13 +991,74 @@ Store the resulting <code class="docutils literal notranslate"><span class="pre"
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">important_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Binomial.1.2&#39;</span><span class="p">,</span> <span class="s1">&#39;IUCN.Status.1.2&#39;</span><span class="p">]</span>
+<span class="n">iucn_data</span> <span class="o">=</span> <span class="n">iucn_raw</span><span class="p">[</span><span class="n">important_columns</span><span class="p">]</span>
+
+<span class="n">iucn_data_new_column_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Binomial.1.2&#39;</span><span class="p">:</span> <span class="s1">&#39;Genus_Species_IUCN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;IUCN.Status.1.2&#39;</span><span class="p">:</span> <span class="s1">&#39;IUCN Status&#39;</span>
+<span class="p">}</span>
+<span class="n">iucn_data_renamed</span> <span class="o">=</span> <span class="n">iucn_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">iucn_data_new_column_names</span><span class="p">)</span>
+
+<span class="n">iucn_data_clean</span> <span class="o">=</span> <span class="n">iucn_data_renamed</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">iucn_data_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Genus_Species_IUCN</th>
+      <th>IUCN Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Abditomys_latidens</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abeomelomys_sevia</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abrawayaomys_ruschii</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abrocoma_bennettii</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abrocoma_boliviensis</td>
+      <td>CR</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -598,13 +1078,97 @@ To do this, you’ll need to extract the right column from the <code class="docu
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">genus_species_formatted</span> <span class="o">=</span> <span class="n">pantheria_data_clean</span><span class="p">[</span><span class="s1">&#39;Genus_Species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+
+<span class="n">pantheria_data_clean</span><span class="p">[</span><span class="s1">&#39;Genus_Species_Formatted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">genus_species_formatted</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">pantheria_data_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+      <th>Genus_Species_Formatted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Artiodactyla</td>
+      <td>Camelus dromedarius</td>
+      <td>1947.94</td>
+      <td>614.41</td>
+      <td>480.0</td>
+      <td>0.98</td>
+      <td>Camelus_dromedarius</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canis adustus</td>
+      <td>249.88</td>
+      <td>&lt;NA&gt;</td>
+      <td>137.0</td>
+      <td>4.5</td>
+      <td>Canis_adustus</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canis aureus</td>
+      <td>371.23</td>
+      <td>365.0</td>
+      <td>192.0</td>
+      <td>3.74</td>
+      <td>Canis_aureus</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canis latrans</td>
+      <td>372.9</td>
+      <td>365.0</td>
+      <td>262.0</td>
+      <td>5.72</td>
+      <td>Canis_latrans</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canis lupus</td>
+      <td>679.37</td>
+      <td>365.0</td>
+      <td>354.0</td>
+      <td>4.98</td>
+      <td>Canis_lupus</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="problem-3b-merge-the-two-dataframes">
@@ -614,13 +1178,112 @@ You’ll need to determine the appropriate arguments for <code class="docutils l
 <p>Name the resulting <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">joined_pantheria_iucn_data</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joined_pantheria_iucn_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="n">pantheria_data_clean</span><span class="p">,</span>
+    <span class="n">right</span><span class="o">=</span><span class="n">iucn_data_clean</span><span class="p">,</span> 
+    <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Genus_Species_Formatted&#39;</span><span class="p">,</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Genus_Species_IUCN&#39;</span>
+<span class="p">)</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">joined_pantheria_iucn_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+      <th>Genus_Species_Formatted</th>
+      <th>Genus_Species_IUCN</th>
+      <th>IUCN Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Artiodactyla</td>
+      <td>Camelus dromedarius</td>
+      <td>1947.94</td>
+      <td>614.41</td>
+      <td>480.0</td>
+      <td>0.98</td>
+      <td>Camelus_dromedarius</td>
+      <td>Camelus_dromedarius</td>
+      <td>EP</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canis adustus</td>
+      <td>249.88</td>
+      <td>&lt;NA&gt;</td>
+      <td>137.0</td>
+      <td>4.5</td>
+      <td>Canis_adustus</td>
+      <td>Canis_adustus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canis aureus</td>
+      <td>371.23</td>
+      <td>365.0</td>
+      <td>192.0</td>
+      <td>3.74</td>
+      <td>Canis_aureus</td>
+      <td>Canis_aureus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canis latrans</td>
+      <td>372.9</td>
+      <td>365.0</td>
+      <td>262.0</td>
+      <td>5.72</td>
+      <td>Canis_latrans</td>
+      <td>Canis_latrans</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canis lupus</td>
+      <td>679.37</td>
+      <td>365.0</td>
+      <td>354.0</td>
+      <td>4.98</td>
+      <td>Canis_lupus</td>
+      <td>Canis_lupus</td>
+      <td>LC</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -635,13 +1298,183 @@ But first, the IUCN status values <code class="docutils literal notranslate"><sp
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pantheria_iucn_clean</span>
+<span class="n">nomiss</span> <span class="o">=</span> <span class="p">(</span><span class="n">joined_pantheria_iucn_data</span><span class="p">[</span><span class="s1">&#39;IUCN Status&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;DD&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">joined_pantheria_iucn_data</span><span class="p">[</span><span class="s1">&#39;IUCN Status&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;EP&#39;</span><span class="p">)</span>
+
+<span class="n">pantheria_iucn_clean</span> <span class="o">=</span> <span class="n">joined_pantheria_iucn_data</span><span class="p">[</span><span class="n">nomiss</span><span class="p">]</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">pantheria_iucn_clean</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+      <th>Genus_Species_Formatted</th>
+      <th>Genus_Species_IUCN</th>
+      <th>IUCN Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canis adustus</td>
+      <td>249.88</td>
+      <td>&lt;NA&gt;</td>
+      <td>137.0</td>
+      <td>4.5</td>
+      <td>Canis_adustus</td>
+      <td>Canis_adustus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canis aureus</td>
+      <td>371.23</td>
+      <td>365.0</td>
+      <td>192.0</td>
+      <td>3.74</td>
+      <td>Canis_aureus</td>
+      <td>Canis_aureus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canis latrans</td>
+      <td>372.9</td>
+      <td>365.0</td>
+      <td>262.0</td>
+      <td>5.72</td>
+      <td>Canis_latrans</td>
+      <td>Canis_latrans</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canis lupus</td>
+      <td>679.37</td>
+      <td>365.0</td>
+      <td>354.0</td>
+      <td>4.98</td>
+      <td>Canis_lupus</td>
+      <td>Canis_lupus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Artiodactyla</td>
+      <td>Bos javanicus</td>
+      <td>797.31</td>
+      <td>&lt;NA&gt;</td>
+      <td>318.96</td>
+      <td>1.22</td>
+      <td>Bos_javanicus</td>
+      <td>Bos_javanicus</td>
+      <td>EN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4941</th>
+      <td>Rodentia</td>
+      <td>Zygogeomys trichopus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>EN</td>
+    </tr>
+    <tr>
+      <th>4942</th>
+      <td>Rodentia</td>
+      <td>Zyzomys argurus</td>
+      <td>155.06</td>
+      <td>219.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.76</td>
+      <td>Zyzomys_argurus</td>
+      <td>Zyzomys_argurus</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <th>4943</th>
+      <td>Rodentia</td>
+      <td>Zyzomys maini</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_maini</td>
+      <td>Zyzomys_maini</td>
+      <td>VU</td>
+    </tr>
+    <tr>
+      <th>4944</th>
+      <td>Rodentia</td>
+      <td>Zyzomys pedunculatus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>CR</td>
+    </tr>
+    <tr>
+      <th>4945</th>
+      <td>Rodentia</td>
+      <td>Zyzomys woodwardi</td>
+      <td>155.06</td>
+      <td>231.16</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.23</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>LC</td>
+    </tr>
+  </tbody>
+</table>
+<p>4311 rows × 9 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="problem-5-computing-fecundity">
@@ -663,13 +1496,198 @@ But first, the IUCN status values <code class="docutils literal notranslate"><sp
 Do not modify the existing <code class="docutils literal notranslate"><span class="pre">pantheria_iucn_clean</span></code> for these unit conversions; instead, use new variables to store the converted <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maturity_yr</span> <span class="o">=</span> <span class="n">pantheria_iucn_clean</span><span class="p">[</span><span class="s1">&#39;Age to Maturity (days)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">365</span>
+<span class="n">longevity_yr</span> <span class="o">=</span> <span class="n">pantheria_iucn_clean</span><span class="p">[</span><span class="s1">&#39;Max Longevity (months)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">12</span>
+<span class="n">interbirth_yr</span> <span class="o">=</span> <span class="n">pantheria_iucn_clean</span><span class="p">[</span><span class="s1">&#39;Interbirth Interval (days)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">365</span>
+<span class="n">litter_size_series</span> <span class="o">=</span> <span class="n">pantheria_iucn_clean</span><span class="p">[</span><span class="s1">&#39;Litter Size&#39;</span><span class="p">]</span>
+
+<span class="n">max_lifetime_fecundity</span> <span class="o">=</span> <span class="p">(((</span><span class="n">longevity_yr</span> <span class="o">-</span> <span class="n">maturity_yr</span><span class="p">)</span> <span class="o">/</span> <span class="n">interbirth_yr</span><span class="p">)</span> <span class="o">*</span> <span class="n">litter_size_series</span><span class="p">)</span>
+<span class="n">pantheria_iucn_clean</span><span class="p">[</span><span class="s1">&#39;Max Fecundity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_lifetime_fecundity</span>
 
 <span class="c1"># Check your work</span>
 <span class="n">pantheria_iucn_clean</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+      <th>Genus_Species_Formatted</th>
+      <th>Genus_Species_IUCN</th>
+      <th>IUCN Status</th>
+      <th>Max Fecundity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Carnivora</td>
+      <td>Canis adustus</td>
+      <td>249.88</td>
+      <td>&lt;NA&gt;</td>
+      <td>137.0</td>
+      <td>4.5</td>
+      <td>Canis_adustus</td>
+      <td>Canis_adustus</td>
+      <td>LC</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carnivora</td>
+      <td>Canis aureus</td>
+      <td>371.23</td>
+      <td>365.0</td>
+      <td>192.0</td>
+      <td>3.74</td>
+      <td>Canis_aureus</td>
+      <td>Canis_aureus</td>
+      <td>LC</td>
+      <td>56.036164</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Carnivora</td>
+      <td>Canis latrans</td>
+      <td>372.9</td>
+      <td>365.0</td>
+      <td>262.0</td>
+      <td>5.72</td>
+      <td>Canis_latrans</td>
+      <td>Canis_latrans</td>
+      <td>LC</td>
+      <td>119.042864</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Carnivora</td>
+      <td>Canis lupus</td>
+      <td>679.37</td>
+      <td>365.0</td>
+      <td>354.0</td>
+      <td>4.98</td>
+      <td>Canis_lupus</td>
+      <td>Canis_lupus</td>
+      <td>LC</td>
+      <td>137.640787</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Artiodactyla</td>
+      <td>Bos javanicus</td>
+      <td>797.31</td>
+      <td>&lt;NA&gt;</td>
+      <td>318.96</td>
+      <td>1.22</td>
+      <td>Bos_javanicus</td>
+      <td>Bos_javanicus</td>
+      <td>EN</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4941</th>
+      <td>Rodentia</td>
+      <td>Zygogeomys trichopus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>EN</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4942</th>
+      <td>Rodentia</td>
+      <td>Zyzomys argurus</td>
+      <td>155.06</td>
+      <td>219.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.76</td>
+      <td>Zyzomys_argurus</td>
+      <td>Zyzomys_argurus</td>
+      <td>LC</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4943</th>
+      <td>Rodentia</td>
+      <td>Zyzomys maini</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_maini</td>
+      <td>Zyzomys_maini</td>
+      <td>VU</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4944</th>
+      <td>Rodentia</td>
+      <td>Zyzomys pedunculatus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>CR</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4945</th>
+      <td>Rodentia</td>
+      <td>Zyzomys woodwardi</td>
+      <td>155.06</td>
+      <td>231.16</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.23</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>LC</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>4311 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="problem-5b-sort">
@@ -677,10 +1695,189 @@ Do not modify the existing <code class="docutils literal notranslate"><span clas
 <p>Finally, use the <code class="docutils literal notranslate"><span class="pre">DataFrame.sort_values</span></code> method to sort <code class="docutils literal notranslate"><span class="pre">pantheria_iucn_clean</span></code> in ascending order of its <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Fecundity'</span></code> column. You may, but are not required, to store the result in a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pantheria_iucn_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Max Fecundity&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Order</th>
+      <th>Genus_Species</th>
+      <th>Age to Maturity (days)</th>
+      <th>Interbirth Interval (days)</th>
+      <th>Max Longevity (months)</th>
+      <th>Litter Size</th>
+      <th>Genus_Species_Formatted</th>
+      <th>Genus_Species_IUCN</th>
+      <th>IUCN Status</th>
+      <th>Max Fecundity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>493</th>
+      <td>Diprotodontia</td>
+      <td>Lagostrophus fasciatus</td>
+      <td>391.96</td>
+      <td>365.0</td>
+      <td>48.0</td>
+      <td>0.9</td>
+      <td>Lagostrophus_fasciatus</td>
+      <td>Lagostrophus_fasciatus</td>
+      <td>VU</td>
+      <td>2.633523</td>
+    </tr>
+    <tr>
+      <th>4918</th>
+      <td>Diprotodontia</td>
+      <td>Wyulda squamicaudata</td>
+      <td>834.72</td>
+      <td>365.0</td>
+      <td>72.0</td>
+      <td>1.01</td>
+      <td>Wyulda_squamicaudata</td>
+      <td>Wyulda_squamicaudata</td>
+      <td>NT</td>
+      <td>3.750227</td>
+    </tr>
+    <tr>
+      <th>3548</th>
+      <td>Dasyuromorphia</td>
+      <td>Pseudantechinus ningbing</td>
+      <td>348.62</td>
+      <td>365.0</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>Pseudantechinus_ningbing</td>
+      <td>Pseudantechinus_ningbing</td>
+      <td>LC</td>
+      <td>4.179507</td>
+    </tr>
+    <tr>
+      <th>1124</th>
+      <td>Microbiotheria</td>
+      <td>Dromiciops gliroides</td>
+      <td>556.85</td>
+      <td>365.0</td>
+      <td>38.4</td>
+      <td>3.0</td>
+      <td>Dromiciops_gliroides</td>
+      <td>Dromiciops_gliroides</td>
+      <td>NT</td>
+      <td>5.023151</td>
+    </tr>
+    <tr>
+      <th>353</th>
+      <td>Cetacea</td>
+      <td>Balaena mysticetus</td>
+      <td>6041.21</td>
+      <td>1642.5</td>
+      <td>480.0</td>
+      <td>1.0</td>
+      <td>Balaena_mysticetus</td>
+      <td>Balaena_mysticetus</td>
+      <td>LC</td>
+      <td>5.210831</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4941</th>
+      <td>Rodentia</td>
+      <td>Zygogeomys trichopus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>Zygogeomys_trichopus</td>
+      <td>EN</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4942</th>
+      <td>Rodentia</td>
+      <td>Zyzomys argurus</td>
+      <td>155.06</td>
+      <td>219.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.76</td>
+      <td>Zyzomys_argurus</td>
+      <td>Zyzomys_argurus</td>
+      <td>LC</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4943</th>
+      <td>Rodentia</td>
+      <td>Zyzomys maini</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_maini</td>
+      <td>Zyzomys_maini</td>
+      <td>VU</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4944</th>
+      <td>Rodentia</td>
+      <td>Zyzomys pedunculatus</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>&lt;NA&gt;</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>Zyzomys_pedunculatus</td>
+      <td>CR</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>4945</th>
+      <td>Rodentia</td>
+      <td>Zyzomys woodwardi</td>
+      <td>155.06</td>
+      <td>231.16</td>
+      <td>&lt;NA&gt;</td>
+      <td>2.23</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>Zyzomys_woodwardi</td>
+      <td>LC</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>4311 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -696,7 +1893,7 @@ Do not modify the existing <code class="docutils literal notranslate"><span clas
 <p>You may store the output of Step 1 in another variable, if you wish, or chain both the steps together in one command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iucn_avg_fecundity</span> <span class="o">=</span> <span class="n">pantheria_iucn_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;IUCN Status&#39;</span><span class="p">)[</span><span class="s1">&#39;Max Fecundity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -709,6 +1906,22 @@ Do not modify the existing <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IUCN Status
+CR    24.656159
+VU     28.08233
+EN     28.21208
+NT    56.979062
+LC    63.847946
+EW         &lt;NA&gt;
+EX         &lt;NA&gt;
+Name: Max Fecundity, dtype: Float64
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="conclusion">
@@ -718,7 +1931,9 @@ Do not modify the existing <code class="docutils literal notranslate"><span clas
 <li><p>Explain, in biological terms, what our new <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Fecundity'</span></code> column measures. <strong>(3 marks)</strong></p></li>
 <li><p>What can you say about the relationship between the IUCN Status and the average maximum fecundity of species? <strong>(3 marks)</strong></p></li>
 </ol>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><strong>Sample Answers</strong></p>
+<p><strong>1.</strong> It measures the average number of offspring produced by a species in their reproductive years. The numerator computes the number of reproductive years, and this is divided by the time between successive reproductions to obtain the average number of times a species can reproduce. This is then multiplied by the litter size to get the number of offspring a species can produce in its lifetime (a short explanation is acceptable).</p>
+<p><strong>2.</strong> The max fecundity is nearly consistently lower for species that are more endangered according to the IUCN categorization (2 marks). Lower risk species (LC, NT) have much higher max fecundity compared to those that are endangered, vulnerable, and critical (CR, VU, EN), though the relationship is not exactly linear (between VU and EN, for example) (1 mark).</p>
 </section>
 </section>
 
@@ -751,20 +1966,20 @@ Do not modify the existing <code class="docutils literal notranslate"><span clas
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture8.html"
+       href="Homework_8.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 8: Merging, Grouping, Plotting</p>
+        <p class="prev-next-title">Homework 8: Investigating Mammalian Fecundity and Conservation using Filtering, Joins, and Arithmetic</p>
       </div>
     </a>
     <a class="right-next"
-       href="Homework_8_key.html"
+       href="../../week09/lecture/lecture9.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 8: Investigating Mammalian Fecundity and Conservation using Filtering, Joins, and Arithmetic</p>
+        <p class="prev-next-title">Week 9: Hypothesis Testing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -63,12 +63,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week11/homework/Homework_11';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week11/homework/Homework_11_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Week 11: Exercises" href="../exercise/exercise11.html" />
-    <link rel="prev" title="Week 11: Linear Regression" href="../lecture/lecture11.html" />
+    <link rel="next" title="Week 12: A short note on reproducibility" href="../../week12/lecture/lecture12.html" />
+    <link rel="prev" title="Week 11: Exercises" href="../exercise/exercise11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -232,9 +232,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture11.html">Moon's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 11 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_11.html">Week 11 Homework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercise/exercise11.html">Week 11 Exercises (Practice)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Homework_11_key.html">Homework 11 Sample Solution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 11 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week11/homework/Homework_11.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week11/homework/Homework_11_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week11/homework/Homework_11.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week11/homework/Homework_11_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -445,9 +445,7 @@ document.write(`
 To submit your work:</p>
 <ol class="arabic simple">
 <li><p>Download this file (<code class="docutils literal notranslate"><span class="pre">Homework_11.ipynb</span></code>) from JupyterHub. (See <a class="reference internal" href="../../../guides/jupyterhub_guide.html"><span class="doc std std-doc">our JupyterHub Guide</span></a> for detailed instructions.)</p></li>
-<li><p>Submit this file to MarkUs under the <strong>hw11</strong> assignment. (See <a class="reference internal" href="../../../guides/markus_guide.html"><span class="doc std std-doc">our MarkUs Guide</span></a> for detailed instructions.)
-All homeworks will take place in a Jupyter notebook (like this one). When you are done, you will download this notebook and submit it to MarkUs.
-We’ve incuded submission instructions at the end of this notebook.</p></li>
+<li><p>Submit this file to MarkUs under the <strong>hw11</strong> assignment. (See <a class="reference internal" href="../../../guides/markus_guide.html"><span class="doc std std-doc">our MarkUs Guide</span></a> for detailed instructions.)</p></li>
 </ol>
 </section>
 <section id="introduction">
@@ -491,10 +489,95 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
+<span class="n">fish_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fish.csv&quot;</span><span class="p">)</span>
+
+<span class="n">fish_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>weight_g</th>
+      <th>length_vertical_cm</th>
+      <th>length_diagonal_cm</th>
+      <th>length_cross_cm</th>
+      <th>height_cm</th>
+      <th>width_cm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bream</td>
+      <td>242.0</td>
+      <td>23.2</td>
+      <td>25.4</td>
+      <td>30.0</td>
+      <td>11.5200</td>
+      <td>4.0200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bream</td>
+      <td>290.0</td>
+      <td>24.0</td>
+      <td>26.3</td>
+      <td>31.2</td>
+      <td>12.4800</td>
+      <td>4.3056</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bream</td>
+      <td>340.0</td>
+      <td>23.9</td>
+      <td>26.5</td>
+      <td>31.1</td>
+      <td>12.3778</td>
+      <td>4.6961</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bream</td>
+      <td>363.0</td>
+      <td>26.3</td>
+      <td>29.0</td>
+      <td>33.5</td>
+      <td>12.7300</td>
+      <td>4.4555</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bream</td>
+      <td>430.0</td>
+      <td>26.5</td>
+      <td>29.0</td>
+      <td>34.0</td>
+      <td>12.4440</td>
+      <td>5.1340</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="exploring-the-data">
@@ -508,15 +591,51 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>You do not need to store the results in a variable. Label the y-axis with “Frequency” and the x-axes with “Vertical Length (cm)”, “Width (cm)” and “Weight (g)” where appropriate.  <strong>(3 marks)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
-<span class="c1"># add additional cells as necessary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## SOLUTION</span>
+<span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;length_vertical_cm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;maroon&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Vertical Length (cm)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1a3eca388c5bcf48e8277bb09266d7aaf18d212a1b15b910ebcd069fd194c885.png" src="../../../_images/1a3eca388c5bcf48e8277bb09266d7aaf18d212a1b15b910ebcd069fd194c885.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## SOLUTION</span>
+
+<span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;width_cm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Width (cm)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/b2f1a4e6691443863af551208f9c902b01848520775da07942fa09e6647f6c79.png" src="../../../_images/b2f1a4e6691443863af551208f9c902b01848520775da07942fa09e6647f6c79.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## SOLUTION</span>
+
+<span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Weight (g)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/7849490147d21aeffaccd8ccaa8568cbf6af59add53bfc8ed19ccc24b985b444.png" src="../../../_images/7849490147d21aeffaccd8ccaa8568cbf6af59add53bfc8ed19ccc24b985b444.png" />
 </div>
 </div>
 <p>Comment on the shape of each histogram and the distribution of the vertical length, width, and weight of the fish in terms of the skewness, the range, and the number of modes. <strong>(3 marks)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Sample solution</strong></p>
+<p>The vertical length is slightly right-skewed, unimodal, and has a range of 10 to 60cm.</p>
+<p>The width is fairly symmetric, unimoda (may argue it’s bi/multimodal), and has a range of 1 to 8cm.</p>
+<p>The weight is right-skewed ranging from 0 to 1500g.</p>
 </div></blockquote>
 <p>Create two scatterplots:</p>
 <ul class="simple">
@@ -526,20 +645,41 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Label the axes with “Vertical Length (cm)”, “Width (cm)” and “Weigth (g)” where appropriate. You do not need to save the values in a variable. <strong>(2 marks)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
-<span class="c1"># add additional cells as necessary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;width_cm&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Width (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weight (g)&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/898f033a698382efe98a3117fccbe3d2eb1e18158627cc7c9c4fceda33638c0b.png" src="../../../_images/898f033a698382efe98a3117fccbe3d2eb1e18158627cc7c9c4fceda33638c0b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;length_vertical_cm&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Vertical Length (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weight (g)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d443f1931a000814d7b57075d6ab9b1bcedd30b0034d18d9deb11c0171ffe987.png" src="../../../_images/d443f1931a000814d7b57075d6ab9b1bcedd30b0034d18d9deb11c0171ffe987.png" />
 </div>
 </div>
 <p>Comment on the shape of each scatterplot. Specifically commenting on whether the trends looks “positive” or “negative” and whether the trends appear linear or not. <strong>(2 marks)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Solution</strong></p>
+<p>Both plots appear to have a moderately positive trend, but the trend appears to have some curvature.</p>
 </div></blockquote>
 <p>Create a new column in <code class="docutils literal notranslate"><span class="pre">fish_data</span></code> called <code class="docutils literal notranslate"><span class="pre">weight_g_sqrt</span></code> which takes the <code class="docutils literal notranslate"><span class="pre">weight_g</span></code> and square roots the values. <em>Hint: this can be done by using <code class="docutils literal notranslate"><span class="pre">.apply(np.sqrt)</span></code></em>. <strong>(1 mark)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+
+<span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g_sqrt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -552,15 +692,34 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Label the axes with “Vertical Length (cm)”, “Width (cm)” and “Weight Sqrt” where appropriate. <strong>(1 mark)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
-<span class="c1"># add additional cells as necessary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;width_cm&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g_sqrt&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Width (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weight Sqrt&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/66b1d9d21cd7a8c51a183189ad022ae107aa04835c7490f2a9842e6cf361fb31.png" src="../../../_images/66b1d9d21cd7a8c51a183189ad022ae107aa04835c7490f2a9842e6cf361fb31.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;length_vertical_cm&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">fish_data</span><span class="p">[</span><span class="s2">&quot;weight_g_sqrt&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length Vertical (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Weight Sqrt&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d4b80b219b76dfa7cabc226ad971a65f75372aeb912e9bf658348631b9f69e08.png" src="../../../_images/d4b80b219b76dfa7cabc226ad971a65f75372aeb912e9bf658348631b9f69e08.png" />
 </div>
 </div>
 <p>Comment on the linearity of the scatterplots with weight square rooted. <strong>(1 mark)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Solution</strong></p>
+<p>The scatterplots appear to still have a positive, moderate trend, but now appear to be more linear. So a linear regression might be appropriate using the transformed variable.</p>
 </div></blockquote>
 </section>
 <section id="methods">
@@ -568,31 +727,87 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Setup a linear regression, called <code class="docutils literal notranslate"><span class="pre">regmod1</span></code>, estimate and fit the model (call this <code class="docutils literal notranslate"><span class="pre">regmod1_fit</span></code>) and calculate the parameter estimates (using <code class="docutils literal notranslate"><span class="pre">.params</span></code>), specifically with <code class="docutils literal notranslate"><span class="pre">weight_g_sqrt</span></code> as the dependent variable and <code class="docutils literal notranslate"><span class="pre">width_cm</span></code> as the independent variable. <strong>(3 marks)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+
+<span class="n">regmod1</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;weight_g_sqrt ~ width_cm&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fish_data</span><span class="p">)</span> <span class="c1"># setup the model</span>
+
+<span class="n">regmod1_fit</span> <span class="o">=</span> <span class="n">regmod1</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># estimate/fit the model </span>
+
+<span class="n">regmod1_fit</span><span class="o">.</span><span class="n">params</span> <span class="c1"># get parameter estimates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept   -5.192309
+width_cm     5.185988
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <p>What is the estimated line of best fit for <code class="docutils literal notranslate"><span class="pre">regmod1</span></code>? Provide an interpretation for the y-intercept and slope estimates. Comment on whether the y-intercept makes sense. <strong>(2 marks)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Sample Solution</strong></p>
+<p>The estimated line is $<span class="math notranslate nohighlight">\(\texttt{Weight.Sqrt} = -5.192 + 5.186 \times \texttt{Width}\)</span>$</p>
+<p>The y-intercept of -5.192, means that a fish that is 0cm wide is expected to have a square root weight of -5.192. This is nonsensical since the square root and fish weight cannot be below 0g, but we need the y-intercept to define the line mathematically.</p>
+<p>The slope of 5.186, means that for every 1cm increase in a fish’s width, we expect the fish’s square rooted weight to increase by 5.186.</p>
 </div></blockquote>
 <p>Setup another linear regression, called <code class="docutils literal notranslate"><span class="pre">regmod2</span></code>, estimate and fit the model (call this <code class="docutils literal notranslate"><span class="pre">regmod2_fit</span></code>) and calculate the parameter estimates (using <code class="docutils literal notranslate"><span class="pre">.params</span></code>), specifically with <code class="docutils literal notranslate"><span class="pre">weight_g_sqrt</span></code> as the dependent variable and both <code class="docutils literal notranslate"><span class="pre">width_cm</span></code> and <code class="docutils literal notranslate"><span class="pre">length_vertical_cm</span></code> as the independent variables. <strong>(1 mark)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+
+<span class="n">regmod2</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;weight_g_sqrt ~ width_cm + length_vertical_cm&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fish_data</span><span class="p">)</span> <span class="c1"># setup the model</span>
+
+<span class="n">regmod2_fit</span> <span class="o">=</span> <span class="n">regmod2</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># estimate/fit the model </span>
+
+<span class="n">regmod2_fit</span><span class="o">.</span><span class="n">params</span> <span class="c1"># get parameter estimates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept            -6.704586
+width_cm              2.986523
+length_vertical_cm    0.427794
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <p>What is the estimated line of best fit for <code class="docutils literal notranslate"><span class="pre">regmod2</span></code>? Provide an interpretation for the y-intercept and slope estimates. <strong>(2 marks)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Sample Solution</strong></p>
+<p>The estimated line is $<span class="math notranslate nohighlight">\(\texttt{Weight.Sqrt} = -6.705 + 2.987 \times \texttt{Width}+ 0.428 \times \texttt{Vertical.Length}\)</span>$</p>
+<p>The y-intercept of -6.705, means that a fish that is 0cm wide and 0cm long (vertically) is expected to have a square root weight of -6.705. This is non-sensical since the square root and fish weight cannot be below 0g, but we need the y-intercept to define the line mathematically.</p>
+<p>The slope of 2.987, means that for every 1cm increase in a fish’s width (with no change in the fish’s vertical length), we expect the fish’s square rooted weight to increase by 2.987.</p>
+<p>The slope of 0.428, means that for every 1cm increase in a fish’s vertical length (with no change in the fish’s width), we expect the fish’s square rooted weight to increase by 0.428.</p>
 </div></blockquote>
 <p>Print out the summary tables for both models (<code class="docutils literal notranslate"><span class="pre">regmod1</span></code> and <code class="docutils literal notranslate"><span class="pre">regmod2</span></code>) which display the p-values ande 95% confidence intervals associated with the intercept and slope estimates. <strong>(1 mark)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+<span class="n">regsum1</span> <span class="o">=</span> <span class="n">regmod1_fit</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">regsum1</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">regsum2</span> <span class="o">=</span> <span class="n">regmod2_fit</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">regsum2</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     -5.1923      0.654     -7.938      0.000      -6.484      -3.900
+width_cm       5.1860      0.138     37.471      0.000       4.913       5.459
+==============================================================================
+======================================================================================
+                         coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept             -6.7046      0.464    -14.465      0.000      -7.620      -5.789
+width_cm               2.9865      0.191     15.651      0.000       2.610       3.363
+length_vertical_cm     0.4278      0.032     13.294      0.000       0.364       0.491
+======================================================================================
 </pre></div>
 </div>
 </div>
@@ -600,7 +815,18 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Calculate the <span class="math notranslate nohighlight">\(R^2\)</span> for both models, and save them in <code class="docutils literal notranslate"><span class="pre">regmod1_rsquared</span></code> and <code class="docutils literal notranslate"><span class="pre">regmod2_rsquared</span></code>. <strong>(1 mark)</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Solution</span>
+
+<span class="n">regmod1_rsquared</span> <span class="o">=</span> <span class="n">regmod1_fit</span><span class="o">.</span><span class="n">rsquared</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">regmod1_rsquared</span><span class="p">)</span>
+<span class="n">regmod2_rsquared</span> <span class="o">=</span> <span class="n">regmod2_fit</span><span class="o">.</span><span class="n">rsquared</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">regmod2_rsquared</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8994288827287736
+0.9528478097297595
 </pre></div>
 </div>
 </div>
@@ -610,7 +836,10 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>Based on the scatterplots, p-values, confidence intervals and <span class="math notranslate nohighlight">\(R^2\)</span> which of the two models would you select to model a fish’s weight (square rooted). You will be graded based on the appropriate justification(s) provided. <strong>(2 marks)</strong></p>
 <blockquote>
-<div><p><strong>Answer goes here</strong></p>
+<div><p><strong>Sample Solution</strong></p>
+<p>They really can select either model and it is correct. The justification is what is important here:</p>
+<p>Option1: Choose regmod1 since it is the simpler model and already has fairly high <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+<p>Option2: Choose regmod2 since it is including vertical length which is significant and increases <span class="math notranslate nohighlight">\(R^2\)</span> by a fair amount.</p>
 </div></blockquote>
 </section>
 </section>
@@ -644,20 +873,20 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture11.html"
+       href="../exercise/exercise11.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 11: Linear Regression</p>
+        <p class="prev-next-title">Week 11: Exercises</p>
       </div>
     </a>
     <a class="right-next"
-       href="../exercise/exercise11.html"
+       href="../../week12/lecture/lecture12.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 11: Exercises</p>
+        <p class="prev-next-title">Week 12: A short note on reproducibility</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

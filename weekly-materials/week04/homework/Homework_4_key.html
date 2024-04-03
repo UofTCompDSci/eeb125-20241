@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week04/homework/Homework_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week04/homework/Homework_4_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="EEB125 Homework 4: Working with Booleans and Functions" href="Homework_4_key.html" />
-    <link rel="prev" title="Class 4: Life history and conservation status" href="../lecture/lecture4.html" />
+    <link rel="next" title="Class 5: Statistical variables, distributions, life history and conservation" href="../../week05/lecture/lecture5.html" />
+    <link rel="prev" title="EEB125 Homework 4: Working with Booleans and Functions" href="Homework_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,8 +184,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture4.html">Tomo's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 4 Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Homework_4_key.html">Homework 4 Sample Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_4.html">Week 4 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 4 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
@@ -291,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week04/homework/Homework_4.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week04/homework/Homework_4_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week04/homework/Homework_4.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week04/homework/Homework_4_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -480,6 +480,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;covid_sex.csv&quot;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">header</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -487,16 +492,23 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </section>
 <section id="problem-1b-interpret-the-data-file">
 <h3>Problem 1b. Interpret the data file<a class="headerlink" href="#problem-1b-interpret-the-data-file" title="Permalink to this heading">#</a></h3>
-<p>Examine the header by printing it to the screen. We will be interested in the following data columns: <code class="docutils literal notranslate"><span class="pre">State</span></code>,<code class="docutils literal notranslate"><span class="pre">Male_cases</span></code>,<code class="docutils literal notranslate"><span class="pre">Female_cases</span></code>,<code class="docutils literal notranslate"><span class="pre">Male_deaths</span></code>, and <code class="docutils literal notranslate"><span class="pre">Female_deaths</span></code>. Please indicate which indices of the header each of these data columns corresponds to. (<em>1pt</em>) For example, <code class="docutils literal notranslate"><span class="pre">State</span></code> is at index zero. Please start your indexing at zero.</p>
+<p>Examine the header by printing it to the screen. We will be interested in the following data columns: <code class="docutils literal notranslate"><span class="pre">State</span></code>,<code class="docutils literal notranslate"><span class="pre">Male_cases</span></code>,<code class="docutils literal notranslate"><span class="pre">Female_cases</span></code>,<code class="docutils literal notranslate"><span class="pre">Male_deaths</span></code>, and <code class="docutils literal notranslate"><span class="pre">Female_deaths</span></code>. Please indicate which indices of the header each of these data columns corresponds to. <em>(1pt)</em> For example, <code class="docutils literal notranslate"><span class="pre">State</span></code> is at index zero. Please start your indexing at zero.</p>
 <p>HINT: You might find it easier to read and count the columns indicated in the header if you split it up according to commas and interpret the resulting list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;\ufeffState&#39;, &#39;Date&#39;, &#39;Total_cases&#39;, &#39;Male_cases&#39;, &#39;Female_cases&#39;, &#39;Male_cases_pct&#39;, &#39;Female_cases_pct&#39;, &#39;Male_cases_rate&#39;, &#39;Female_cases_rate&#39;, &#39;Total_deaths&#39;, &#39;Male_deaths&#39;, &#39;Female_deaths&#39;, &#39;Male_deaths_pct&#39;, &#39;Female_deaths_pct&#39;, &#39;Male_deaths_rate&#39;, &#39;Female_deaths_rate&#39;, &#39;source&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p>Solution: Male_cases is at index 3, Female_cases is at index 4, Male_deaths is at index 10, and Female_deaths is at index 11.</p>
 </section>
 <section id="problem-1c-examine-the-data">
 <h3>Problem 1c. Examine the data<a class="headerlink" href="#problem-1c-examine-the-data" title="Permalink to this heading">#</a></h3>
@@ -504,6 +516,112 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alabama,30-Oct,831653,,,,,,,15573,,,,,,,https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7
+
+Alaska,30-Oct,132645,67287,64852,50.73,48.89,17450.90,18374.95,699,425,274,60.8,39.2,110.22,77.63,https://coronavirus-response-alaska-dhss.hub.arcgis.com/
+
+Arizona,30-Oct,1166060,561976,599451,48.19,51.41,16272.94,17160.29,21153,12392,8748,58.58,41.36,358.83,250.43,https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php#novel-coronavirus-home
+
+Arkansas,30-Oct,512994,239568,268296,46.7,52.3,16314.78,17624.85,8370,,,,,,,https://www.healthy.arkansas.gov/programs-services/topics/novel-coronavirus
+
+California,30-Oct,4647587,2221547,2356327,47.8,50.7,11419.62,11964.09,71519,41696,29537,58.3,41.3,214.33,149.97,https://update.covid19.ca.gov/
+
+Colorado,30-Oct,740461,360012,370008,48.62,49.97,12946.21,13453.33,8186,4508,3666,55.07,44.78,162.11,133.28,https://covid19.colorado.gov/case-data
+
+Connecticut,30-Oct,402583,192749,208210,47.88,51.72,11032.32,11350.47,8764,4338,4416,49.5,50.39,248.29,240.74,https://portal.ct.gov/Coronavirus
+
+Delaware,30-Oct,143950,67113,76632,46.62,53.24,14603.43,15641.58,2091,1043,1048,49.88,50.12,226.95,213.91,https://myhealthycommunity.dhss.delaware.gov/locations/state
+
+Florida,30-Oct,,,,,,,,,,,,,,,https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429/
+
+Georgia,30-Oct,1263757,579945,673793,45.89,53.32,11570.60,12748.54,24786,13213,11561,53.31,46.64,263.62,218.74,https://dph.georgia.gov/covid-19-daily-status-report
+
+Hawaii,30-Oct,81049,42072,38899,51.91,47.99,5894.32,5492.22,884,533,351,60.29,39.71,74.67,49.56,https://health.hawaii.gov/coronavirusdisease2019/what-you-should-know/current-situation-in-hawaii/
+
+Idaho,30-Oct,291252,138195,151535,47.45,52.03,16343.53,17991.80,3538,2074,1455,58.62,41.12,245.28,172.75,https://public.tableau.com/profile/idaho.division.of.public.health#!/vizhome/DPHIdahoCOVID-19Dashboard_V2/Story1
+
+Illinois,30-Oct,1695524,799595,875387,47.16,51.63,12700.22,13414.70,25771,13977,11794,54.24,45.76,222,180.73,http://www.dph.illinois.gov/covid19/covid19-statistics
+
+Indiana,30-Oct,1018638,472648,539878,46.4,53,14449.35,16037.45,16134,8325,7744,51.6,48,254.51,230.05,https://coronavirus.in.gov/
+
+Iowa,30-Oct,522421,245538,271659,47,52,15795.49,17215.20,6965,3691,3274,53,47,237.47,207.45,https://idph.iowa.gov/Emerging-Health-Issues/Novel-Coronavirus
+
+Kansas,30-Oct,434646,207479,226477,47.74,52.11,14314.69,15518.89,6415,3526,2887,54.96,45,243.27,197.83,https://www.coronavirus.kdheks.gov/
+
+Kentucky,30-Oct,743156,347500,386961,46.76,52.07,15891.41,17171.65,9766,5035,4730,51.56,48.43,230.27,209.88,https://govstatus.egov.com/kycovid19
+
+Louisiana,30-Oct,758471,341312,417159,45,55,14970.03,17500.87,14547,7768,6779,53.4,46.6,340.71,284.39,http://ldh.la.gov/coronavirus/
+
+Maine,30-Oct,104259,50188,54071,48.14,51.86,7694.02,7945.61,1167,592,575,50.73,49.27,90.76,84.49,https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus.shtml
+
+Maryland,30-Oct,560634,267077,293557,47.64,52.36,9176.89,9490.67,10651,5535,5116,51.97,48.03,190.19,165.4,https://coronavirus.maryland.gov/
+
+Massachusetts,30-Oct,794382,,,,,,,18601,9272,9693,49.85,52.11,279.78,275.67,https://www.mass.gov/info-details/covid-19-cases-quarantine-and-monitoring
+
+Michigan,30-Oct,1128435,540419,581725,47.89,51.55,11030.94,11500.25,22182,12025,10155,54.21,45.78,245.45,200.76,https://www.michigan.gov/coronavirus/097537-406-98163_98173---00.html
+
+Minnesota,30-Oct,787550,379884,402123,48.24,51.06,13805.19,14487.73,8669,4603,4026,53.1,46.44,167.28,145.05,https://www.health.state.mn.us/diseases/coronavirus/situation.html#raceeth1
+
+Mississippi,30-Oct,504318,,,,,,,10075,,,,,,,https://msdh.ms.gov/msdhsite/_static/140420.html#caseTable
+
+Missouri,30-Oct,702327,322791,372939,45.96,53.1,10800.12,12025.29,12055,6410,5528,53.17,45.86,214.47,178.25,https://health.mo.gov/living/healthcondiseases/communicable/novel-coronavirus/results.php
+
+Montana,30-Oct,175847,83456,91502,47.46,52.04,15920.03,17681.14,2346,1314,1027,56.01,43.78,250.66,198.45,https://dphhs.mt.gov/publichealth/cdepi/diseases/coronavirusmt/demographics
+
+Nebraska,30-Oct,94933,,,,,,,1005,,,,,,,http://dhhs.ne.gov/Pages/Coronavirus.aspx
+
+Nevada,30-Oct,438216,210391,224248,48.01,51.17,14339.97,15404.99,7631,4658,2936,61.04,38.47,317.48,201.69,https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9
+
+New Hampshire,30-Oct,132441,63690,66779,48.09,50.42,9577.69,9840.14,1544,796,748,51.55,48.45,119.7,110.22,https://www.nh.gov/covid19/
+
+New Jersey,30-Oct,1042293,503238,537006,48.28,51.52,11606.23,11812.94,27863,15179,12684,54.48,45.52,350.07,279.02,https://maps.arcgis.com/apps/MapSeries/index.html?appid=c2efd1898e48452e83d7218329e953d7
+
+New Mexico,30-Oct,275209,129592,141774,47.09,51.52,12510.69,13418.15,5049,,,,,,,https://cv.nmhealth.org/
+
+New York,30-Oct,2537145,1215292,1291407,47.9,50.9,12766.27,12787.60,45567,25411,20145,55.77,44.21,266.93,199.48,https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Fatalities?%3Aembed=yes&amp;%3Atoolbar=no&amp;%3Atabs=n
+
+North Carolina,30-Oct,1477514,688327,774942,46.59,52.45,13920.33,14871.66,17847,9495,8352,53.2,46.8,192.02,160.28,https://www.ncdhhs.gov/divisions/public-health/covid19/covid-19-nc-case-count#by-race-ethnicity
+
+North Dakota,30-Oct,148394,71579,76813,48.24,51.76,18535.00,20986.13,1762,,,,,,,https://www.health.nd.gov/diseases-conditions/coronavirus/north-dakota-coronavirus-cases
+
+Ohio,30-Oct,1545327,710850,819023,46,53,12462.39,13793.12,24527,13057,11470,53.24,46.76,228.91,193.17,https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home
+
+Oklahoma,30-Oct,641051,301573,339323,47.04,52.93,15532.38,17167.34,10710,5930,4779,55.37,44.62,305.42,241.78,https://coronavirus.health.ok.gov/
+
+Oregon,30-Oct,363673,173328,183724,47.66,50.52,8567.78,8923.31,4337,2364,1958,54.51,45.15,116.85,95.1,https://govstatus.egov.com/OR-OHA-COVID-19
+
+Pennsylvania,30-Oct,1564939,735257,823957,46.98,52.65,11739.34,12621.91,31454,16096,15281,51.17,48.58,256.99,234.08,https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx
+
+Rhode Island,30-Oct,157436,74168,83268,47.11,52.89,14448.35,15326.93,2870,1408,1462,49.06,50.94,274.29,269.11,https://ri-department-of-health-covid-19-data-rihealth.hub.arcgis.com/
+
+South Carolina,30-Oct,897152,403789,470357,44.8,52.5,16784.50,18443.93,13716,7338,6193,53.7,45,305.02,242.84,https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/testing-sc-data-covid-19
+
+South Dakota,30-Oct,154482,73797,80685,47.77,52.23,16935.20,18828.41,2235,1206,1029,53.96,46.04,276.76,240.12,https://doh.sd.gov/news/coronavirus.aspx
+
+Tennessee,30-Oct,1280265,593892,676986,46.39,52.88,18309.22,19868.05,16351,8871,7473,54.25,45.7,273.49,219.32,https://www.tn.gov/health/cedep/ncov.html
+
+Texas,30-Oct,3511739,2149184,1316902,61.2,37.5,15517.83,9382.71,69981,40729,29252,58.2,41.8,294.08,208.42,https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83
+
+Utah,30-Oct,549882,271907,277374,49.45,50.44,17739.61,18337.78,3208,1633,1575,50.9,49.1,106.53,104.14,https://coronavirus.utah.gov/case-counts/
+
+Vermont,30-Oct,40191,19945,20117,49.63,50.05,6476.22,6345.98,364,184,180,50.55,49.45,59.75,56.78,https://vcgi.maps.arcgis.com/apps/opsdashboard/index.html#/6128a0bc9ae14e98a686b635001ef7a7
+
+Virginia,30-Oct,924771,440629,477419,47.65,51.63,10646.88,11167.17,13907,7282,6615,52.36,47.57,175.95,154.73,https://public.tableau.com/views/VirginiaCOVID-19Dashboard/VirginiaCOVID-19Dashboard?:embed=yes&amp;:display_count=yes&amp;:showVizHome=no&amp;:toolbar=no
+
+Washington,30-Oct,725435,350385,356189,48.3,49.1,9611.01,9762.15,8628,4745,3743,55,43.38,130.17,102.58,https://www.doh.wa.gov/Emergencies/Coronavirus
+
+West Virginia,30-Oct,272532,128200,141440,47.04,51.9,14178.34,15293.16,4426,,,,,,,https://dhhr.wv.gov/COVID-19/Pages/default.aspx
+
+Wisconsin,30-Oct,790282,424868,455363,53.76,57.62,14791.52,15669.66,8483,,,,,0,0,https://www.dhs.wisconsin.gov/covid-19/data.htm
+
+Wyoming,30-Oct,102926,39168,41155,38.05,39.99,13188.81,14447.60,1174,655,515,55.79,43.87,220.55,180.8,https://health.wyo.gov/publichealth/infectious-disease-epidemiology-unit/disease/novel-coronavirus/covid-19-map-and-statistics/
 </pre></div>
 </div>
 </div>
@@ -518,6 +636,9 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">risk_m</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">risk_f</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
 </div>
@@ -535,6 +656,21 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">line_dat</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">inf_m</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">inf_f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">death_m</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+        <span class="n">death_f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+        <span class="n">covid_risk_m</span> <span class="o">=</span> <span class="n">death_m</span> <span class="o">/</span> <span class="n">inf_m</span>
+        <span class="n">covid_risk_f</span> <span class="o">=</span> <span class="n">death_f</span> <span class="o">/</span> <span class="n">inf_f</span>
+        <span class="n">risk_m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">covid_risk_m</span><span class="p">)</span>
+        <span class="n">risk_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">covid_risk_f</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
 </div>
@@ -549,10 +685,10 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_mean</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
-    <span class="c1"># Replace the ... with your code.</span>
     <span class="c1"># Your last line of code should be of the form return &lt;value&gt;,</span>
     <span class="c1"># where &lt;value&gt; is the computed mean of your data.</span>
-    <span class="o">...</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -564,6 +700,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01693750057836708
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="problem-3b-calculate-mean-differences-across-the-sexes-in-risk-of-death-given-covid-infection">
@@ -571,9 +712,10 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Estimate mean risk of death from COVID for each sex using the function created in the previous step. Assign the results for each sex to the variables <code class="docutils literal notranslate"><span class="pre">mean_risk_m</span></code> and <code class="docutils literal notranslate"><span class="pre">mean_risk_f</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the ... with the appropriate code</span>
-<span class="n">mean_risk_m</span> <span class="o">=</span> <span class="o">...</span>
-<span class="n">mean_risk_f</span> <span class="o">=</span> <span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">mean_risk_m</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">risk_m</span><span class="p">)</span>
+<span class="n">mean_risk_f</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">risk_f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -585,12 +727,17 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01693750057836708 0.01336029006238279
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="problem-3c-interpret-your-results">
 <h3>Problem 3c. Interpret your results<a class="headerlink" href="#problem-3c-interpret-your-results" title="Permalink to this heading">#</a></h3>
-<p>Which sex appears to be at greater risk of death, on average, if they are infected with COVID (<em>2pt</em>)? Do you think any difference might stem from biological, or behavioural differences, and why (<em>2pt</em>)? Feel free to speculate.</p>
-<p><strong>WRITE YOUR ANSWER HERE.</strong></p>
+<p>Which sex appears to be at greater risk of death, on average, if they are infected with COVID <em>(2pt)</em>? Do you think any difference might stem from biological, or behavioural differences, and why <em>(2pt)</em>? Feel free to speculate.</p>
+<p><em>Solution:</em> Given that the average risk for males <code class="docutils literal notranslate"><span class="pre">mean_risk_m</span></code> is higher than the average risk for females <code class="docutils literal notranslate"><span class="pre">mean_risk_f</span></code> this means that the males are at greater risk on average compared to females. In terms of behavioural differences men may be more exposed to covid due to working in occupations that have higher rates of covid exposure and deaths such as construction, transportation, and factories.</p>
 </section>
 </section>
 <section id="problem-4-politics-and-epidemiological-risk">
@@ -602,6 +749,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">gov_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;state_governors.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">gov_lines</span> <span class="o">=</span> <span class="n">gov_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">gov_header</span> <span class="o">=</span> <span class="n">gov_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">gov_data</span> <span class="o">=</span> <span class="n">gov_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -609,15 +761,25 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 </section>
 <section id="problem-4b-examine-the-dataset">
 <h3>Problem 4b. Examine the dataset<a class="headerlink" href="#problem-4b-examine-the-dataset" title="Permalink to this heading">#</a></h3>
-<p>Print <code class="docutils literal notranslate"><span class="pre">gov_header</span></code>. Examine the columns and the first few lines of the data. Explain what information you think each column contains. (<em>1pt</em>)</p>
+<p>Print <code class="docutils literal notranslate"><span class="pre">gov_header</span></code>. Examine the columns and the first few lines of the data. Explain what information you think each column contains. <em>(1pt)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Sample print statement to inform a short answer.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">gov_header</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gov_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state_name,party
+
+[&#39;Alaska,republican\n&#39;, &#39;Arizona,republican\n&#39;, &#39;Arkansas,republican\n&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>WRITE YOUR RESPONSE HERE</strong></p>
+<p><em>Solution:</em> The information contained in each column represents what state and party a govenor belongs too respectively.</p>
 </section>
 <section id="problem-4c-read-in-the-political-party-data">
 <h3>Problem 4c. Read in the political party data<a class="headerlink" href="#problem-4c-read-in-the-political-party-data" title="Permalink to this heading">#</a></h3>
@@ -625,6 +787,13 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">state_govs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">gov_data</span><span class="p">:</span>
+    <span class="n">line_dat</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">party</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">state_govs</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">party</span>
 </pre></div>
 </div>
 </div>
@@ -640,6 +809,27 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">democrat_disp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">repub_disp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">line_dat</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">line_dat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">party</span> <span class="o">=</span>  <span class="n">state_govs</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">inf_m</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">inf_f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">death_m</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+        <span class="n">death_f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_dat</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+        <span class="n">state_risk_m</span> <span class="o">=</span> <span class="p">(</span><span class="n">death_m</span><span class="o">/</span><span class="n">inf_m</span><span class="p">)</span>
+        <span class="n">state_risk_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">death_f</span><span class="o">/</span><span class="n">inf_f</span><span class="p">)</span>
+        <span class="n">risk_disp</span> <span class="o">=</span> <span class="n">state_risk_m</span> <span class="o">-</span> <span class="n">state_risk_f</span>
+        <span class="k">if</span> <span class="n">party</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;republican&quot;</span><span class="p">:</span>
+            <span class="n">repub_disp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">risk_disp</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">party</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;democrat&quot;</span><span class="p">:</span>
+            <span class="n">democrat_disp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">risk_disp</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span>
 </pre></div>
 </div>
 </div>
@@ -650,9 +840,10 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <p>Please use the <code class="docutils literal notranslate"><span class="pre">calc_mean</span></code> function you defined above to calculate the average disparity in COVID death risk across states controlled by each major political party in the US. Assign the means from <code class="docutils literal notranslate"><span class="pre">repub_disp</span></code> and <code class="docutils literal notranslate"><span class="pre">democrat_disp</span></code> to the variables <code class="docutils literal notranslate"><span class="pre">repub_mean_risk</span></code> and <code class="docutils literal notranslate"><span class="pre">democrat_mean_risk</span></code>, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace the ... with the appropriate code</span>
-<span class="n">repub_mean_risk</span> <span class="o">=</span> <span class="o">...</span>
-<span class="n">democrat_mean_risk</span> <span class="o">=</span> <span class="o">...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">repub_mean_risk</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">repub_disp</span><span class="p">)</span>
+<span class="n">democrat_mean_risk</span> <span class="o">=</span> <span class="n">calc_mean</span><span class="p">(</span><span class="n">democrat_disp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -661,6 +852,11 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell is provided to you to help check your work</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">repub_mean_risk</span><span class="p">,</span><span class="n">democrat_mean_risk</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.003419422241464342 0.0037199713357880535
 </pre></div>
 </div>
 </div>
@@ -673,7 +869,12 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
 <li><p>Do Democrat-run or Republican-run states display, on average, greater disparity between risk of COVID death for males vs for females <em>(2pts)</em>?</p></li>
 <li><p>Do you think the observed difference is significant or meaningful? Explain why or why not <em>(2pts)</em>. In future weeks, we will learn how to evaluate this latter question statistically, but for now, see if you can create your own argument. <strong>Speculate on any possible reasons for the observed difference</strong>. Does our analysis of COVID death rates by dominant political party provide any possible sociopolitical causes for disparity between the sexes? <em>(4pts)</em></p></li>
 </ol>
-<p><strong>WRITE YOUR RESPONSES HERE.</strong></p>
+<p><em>Solution</em></p>
+<ol class="arabic simple">
+<li><p>A value above zero means that males are more likely to die given infection with COVID. A value below zero indicates that females are more likely to die given COVID infection.</p></li>
+<li><p>Democrat-run states have a slightly higher disparity, on average, than Republican-run states. While males are more likely to die given COVID infection across all states, this difference is slightly greater in states with a Democratic governor.</p></li>
+<li><p>Please accept any well-reasoned answer. Use your own discretion in evaluating thoughtfulness and engagement with the question.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -707,20 +908,20 @@ We’ve incuded submission instructions at the end of this notebook.</p></li>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture4.html"
+       href="Homework_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class 4: Life history and conservation status</p>
+        <p class="prev-next-title">EEB125 Homework 4: Working with Booleans and Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="Homework_4_key.html"
+       href="../../week05/lecture/lecture5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EEB125 Homework 4: Working with Booleans and Functions</p>
+        <p class="prev-next-title">Class 5: Statistical variables, distributions, life history and conservation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

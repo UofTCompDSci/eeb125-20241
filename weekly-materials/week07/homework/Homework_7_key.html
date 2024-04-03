@@ -63,12 +63,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week07/homework/Homework_7';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week07/homework/Homework_7_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Homework 7: Data Wrangling – Understanding U.S. Covid Statistics" href="Homework_7_key.html" />
-    <link rel="prev" title="Week 7: The Pandas Library" href="../lecture/lecture7.html" />
+    <link rel="next" title="EEB125 Final Project Proposal" href="../../../project/project_proposal.html" />
+    <link rel="prev" title="Homework 7: Data Wrangling – Understanding U.S. Covid Statistics" href="Homework_7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,9 +197,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture7.html">KP's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_7.html">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Homework_7_key.html">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week07/homework/Homework_7.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week07/homework/Homework_7_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week07/homework/Homework_7.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week07/homework/Homework_7_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -494,9 +494,165 @@ In this lab, we are using a set of data that is based on the information in thei
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Write your code here.</span>
+<span class="n">covid_raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;covid_raw.csv&quot;</span><span class="p">)</span>
+<span class="n">covid_raw_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>State</th>
+      <th>Date</th>
+      <th>Total_cases</th>
+      <th>Male_cases</th>
+      <th>Female_cases</th>
+      <th>Male_cases_pct</th>
+      <th>Female_cases_pct</th>
+      <th>Male_cases_rate</th>
+      <th>Female_cases_rate</th>
+      <th>Total_deaths</th>
+      <th>Male_deaths</th>
+      <th>Female_deaths</th>
+      <th>Male_deaths_pct</th>
+      <th>Female_deaths_pct</th>
+      <th>Male_deaths_rate</th>
+      <th>Female_deaths_rate</th>
+      <th>pop</th>
+      <th>source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Alaska</td>
+      <td>30-Oct</td>
+      <td>132645.0</td>
+      <td>67287.0</td>
+      <td>64852.0</td>
+      <td>50.73</td>
+      <td>48.89</td>
+      <td>17450.90</td>
+      <td>18374.95</td>
+      <td>699.0</td>
+      <td>425.0</td>
+      <td>274.0</td>
+      <td>60.80</td>
+      <td>39.20</td>
+      <td>110.22</td>
+      <td>77.63</td>
+      <td>731545</td>
+      <td>https://coronavirus-response-alaska-dhss.hub.a...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Arizona</td>
+      <td>30-Oct</td>
+      <td>1166060.0</td>
+      <td>561976.0</td>
+      <td>599451.0</td>
+      <td>48.19</td>
+      <td>51.41</td>
+      <td>16272.94</td>
+      <td>17160.29</td>
+      <td>21153.0</td>
+      <td>12392.0</td>
+      <td>8748.0</td>
+      <td>58.58</td>
+      <td>41.36</td>
+      <td>358.83</td>
+      <td>250.43</td>
+      <td>7278717</td>
+      <td>https://www.azdhs.gov/preparedness/epidemiolog...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>California</td>
+      <td>30-Oct</td>
+      <td>4647587.0</td>
+      <td>2221547.0</td>
+      <td>2356327.0</td>
+      <td>47.80</td>
+      <td>50.70</td>
+      <td>11419.62</td>
+      <td>11964.09</td>
+      <td>71519.0</td>
+      <td>41696.0</td>
+      <td>29537.0</td>
+      <td>58.30</td>
+      <td>41.30</td>
+      <td>214.33</td>
+      <td>149.97</td>
+      <td>39512223</td>
+      <td>https://update.covid19.ca.gov/</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>Colorado</td>
+      <td>30-Oct</td>
+      <td>740461.0</td>
+      <td>360012.0</td>
+      <td>370008.0</td>
+      <td>48.62</td>
+      <td>49.97</td>
+      <td>12946.21</td>
+      <td>13453.33</td>
+      <td>8186.0</td>
+      <td>4508.0</td>
+      <td>3666.0</td>
+      <td>55.07</td>
+      <td>44.78</td>
+      <td>162.11</td>
+      <td>133.28</td>
+      <td>5758736</td>
+      <td>https://covid19.colorado.gov/case-data</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>Connecticut</td>
+      <td>30-Oct</td>
+      <td>402583.0</td>
+      <td>192749.0</td>
+      <td>208210.0</td>
+      <td>47.88</td>
+      <td>51.72</td>
+      <td>11032.32</td>
+      <td>11350.47</td>
+      <td>8764.0</td>
+      <td>4338.0</td>
+      <td>4416.0</td>
+      <td>49.50</td>
+      <td>50.39</td>
+      <td>248.29</td>
+      <td>240.74</td>
+      <td>3565287</td>
+      <td>https://portal.ct.gov/Coronavirus</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="problem-2-cleaning-the-data">
@@ -514,9 +670,75 @@ You are encouraged, but not required, to create a new list variable to store the
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">covid_pop_data</span> <span class="o">=</span> <span class="n">covid_raw_data</span><span class="p">[[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Total_cases&#39;</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span><span class="p">]]</span>
+<span class="n">covid_pop_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">covid_renamed_data</span> <span class="o">=</span> <span class="n">covid_pop_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Total_cases&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Cases&#39;</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span><span class="p">:</span> <span class="s1">&#39;Population&#39;</span><span class="p">})</span>
+<span class="n">covid_renamed_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">covid_final_data</span> <span class="o">=</span> <span class="n">covid_renamed_data</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
+<span class="n">covid_final_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Total Cases</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alaska</td>
+      <td>132645</td>
+      <td>731545</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Arizona</td>
+      <td>1166060</td>
+      <td>7278717</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>California</td>
+      <td>4647587</td>
+      <td>39512223</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Colorado</td>
+      <td>740461</td>
+      <td>5758736</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Connecticut</td>
+      <td>402583</td>
+      <td>3565287</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="problem-3-calculating-on-a-series">
@@ -527,6 +749,7 @@ You are encouraged, but not required, to create a new list variable to store the
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">total_cases</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="s1">&#39;Total Cases&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -540,6 +763,13 @@ You are encouraged, but not required, to create a new list variable to store the
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">average_cases_per_state</span> <span class="o">=</span> <span class="n">total_cases</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">average_cases_per_state</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>869570.0
 </pre></div>
 </div>
 </div>
@@ -548,7 +778,7 @@ You are encouraged, but not required, to create a new list variable to store the
 <section id="problem-3c-interpret">
 <h2>Problem 3c: Interpret<a class="headerlink" href="#problem-3c-interpret" title="Permalink to this heading">#</a></h2>
 <p>Why is the average number of cases per state not a particularly useful statistic when analysing COVID cases? (<strong>1 pt</strong>)</p>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><strong>Sample solution</strong>: it doesn’t take into account the size of the state.</p>
 </section>
 <section id="problem-4-data-transformation">
 <h2>Problem 4: Data Transformation<a class="headerlink" href="#problem-4-data-transformation" title="Permalink to this heading">#</a></h2>
@@ -569,6 +799,58 @@ As we did in lecture, take advantage of operations like <code class="docutils li
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">total_cases</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="s2">&quot;Total Cases&quot;</span><span class="p">]</span>
+<span class="n">populations</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span>
+<span class="n">base_rates</span> <span class="o">=</span> <span class="n">total_cases</span> <span class="o">/</span> <span class="n">populations</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">case_rates</span> <span class="o">=</span> <span class="n">base_rates</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">case_rates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     18.13
+1     16.02
+2     11.76
+3     12.86
+4     11.29
+5     14.78
+6       9.1
+7      11.9
+8      5.72
+9      16.3
+10    13.38
+11    15.13
+12    16.56
+13    14.92
+14    16.63
+15    16.32
+16     7.76
+17     9.27
+18     11.3
+19    13.96
+20    11.44
+21    16.45
+22    14.23
+23     9.74
+24    11.73
+25    13.04
+26    14.09
+27    13.22
+28     16.2
+29     8.62
+30    12.22
+31    14.86
+32    17.42
+33    17.46
+34    18.74
+35    12.11
+36    17.15
+37     6.44
+38    10.83
+39     9.53
+40    17.78
+dtype: Float64
 </pre></div>
 </div>
 </div>
@@ -582,9 +864,76 @@ If you do it incorrectly or fix a problem in Problem 4a and want to restart, you
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">covid_final_data</span><span class="p">[</span><span class="s2">&quot;Case Rate (%)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case_rates</span>
+
+<span class="n">covid_final_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Total Cases</th>
+      <th>Population</th>
+      <th>Case Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alaska</td>
+      <td>132645</td>
+      <td>731545</td>
+      <td>18.13</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Arizona</td>
+      <td>1166060</td>
+      <td>7278717</td>
+      <td>16.02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>California</td>
+      <td>4647587</td>
+      <td>39512223</td>
+      <td>11.76</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Colorado</td>
+      <td>740461</td>
+      <td>5758736</td>
+      <td>12.86</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Connecticut</td>
+      <td>402583</td>
+      <td>3565287</td>
+      <td>11.29</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -609,9 +958,142 @@ To do this:</p>
 <span class="n">small_threshold</span> <span class="o">=</span> <span class="mi">1000000</span>
 
 <span class="c1"># Write your code here</span>
+<span class="n">is_large</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">large_threshold</span>
+<span class="n">covid_large_state_data</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="n">is_large</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">covid_large_state_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">is_small</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">small_threshold</span>
+<span class="n">covid_small_state_data</span> <span class="o">=</span> <span class="n">covid_final_data</span><span class="p">[</span><span class="n">is_small</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">covid_small_state_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Total Cases</th>
+      <th>Population</th>
+      <th>Case Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>California</td>
+      <td>4647587</td>
+      <td>39512223</td>
+      <td>11.76</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Georgia</td>
+      <td>1263757</td>
+      <td>10617423</td>
+      <td>11.9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Illinois</td>
+      <td>1695524</td>
+      <td>12671821</td>
+      <td>13.38</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>New York</td>
+      <td>2537145</td>
+      <td>19453561</td>
+      <td>13.04</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>North Carolina</td>
+      <td>1477514</td>
+      <td>10488084</td>
+      <td>14.09</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Total Cases</th>
+      <th>Population</th>
+      <th>Case Rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alaska</td>
+      <td>132645</td>
+      <td>731545</td>
+      <td>18.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Delaware</td>
+      <td>143950</td>
+      <td>973764</td>
+      <td>14.78</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>District of Columbia</td>
+      <td>64240</td>
+      <td>705749</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>South Dakota</td>
+      <td>154482</td>
+      <td>884659</td>
+      <td>17.46</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Vermont</td>
+      <td>40191</td>
+      <td>623989</td>
+      <td>6.44</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="problem-5b-computing-average-rates">
@@ -621,6 +1103,17 @@ To do this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">large_state_avg_rate</span> <span class="o">=</span> <span class="n">covid_large_state_data</span><span class="p">[</span><span class="s2">&quot;Case Rate (%)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">small_state_avg_rate</span> <span class="o">=</span> <span class="n">covid_small_state_data</span><span class="p">[</span><span class="s2">&quot;Case Rate (%)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">large_state_avg_rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_state_avg_rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.715
+13.948333333333332
 </pre></div>
 </div>
 </div>
@@ -641,13 +1134,21 @@ To do this:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Large state min: 11.76 / Large state max: 14.09
+Small state min: 6.44 / Small state max: 18.13
+</pre></div>
+</div>
+</div>
 </div>
 <p>Based on your work on this homework, write 1-2 paragraphs answering each of the following questions:</p>
 <ol class="arabic simple">
 <li><p>Can you conclude whether states with large populations have a higher or lower COVID-19 rate than states with small populations? How confident are you in this conclusion? <strong>(2 pt)</strong></p></li>
 <li><p>What other data would you want to collect to help answer the original research question? What other analyses would you want to perform? <strong>(2 pt)</strong></p></li>
 </ol>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><strong>Sample solutions</strong></p>
+<p><strong>1.</strong> Large states on average have lower rates of COVID-19 (1 mark). However the range of the average rates for large states and small states overlap quite a bit. The minimum rate for small states is lower than the minimum for large states (1 mark).</p>
+<p><strong>2.</strong> (Any reasonable answer is acceptable) The standard deviation to help understand the range of the rates. A statistical test of significance. Data from more states. More granular divisions of large and small states.</p>
 </section>
 </section>
 
@@ -680,20 +1181,20 @@ To do this:</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture7.html"
+       href="Homework_7.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 7: The Pandas Library</p>
+        <p class="prev-next-title">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</p>
       </div>
     </a>
     <a class="right-next"
-       href="Homework_7_key.html"
+       href="../../../project/project_proposal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 7: Data Wrangling – Understanding U.S. Covid Statistics</p>
+        <p class="prev-next-title">EEB125 Final Project Proposal</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

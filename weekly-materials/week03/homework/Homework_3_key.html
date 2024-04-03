@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week03/homework/Homework_3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'weekly-materials/week03/homework/Homework_3_key';</script>
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="EEB125 Homework 3: Reading and manipulating some data" href="Homework_3_key.html" />
-    <link rel="prev" title="Class 3: Booleans, Dictionaries, and Mammalian Diet" href="../lecture/lecture3.html" />
+    <link rel="next" title="Class 4: Life history and conservation status" href="../../week04/lecture/lecture4.html" />
+    <link rel="prev" title="EEB125 Homework 3: Reading and manipulating some data" href="Homework_3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture/lecture3.html">Tomo's Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 3 Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Homework_3_key.html">Homework 3 Sample Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Homework_3.html">Week 3 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 3 Sample Solution</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -291,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week03/homework/Homework_3.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A//github.com/UofTCompDSci/eeb125-20241&urlpath=tree/eeb125-20241/weekly-materials/week03/homework/Homework_3_key.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/weekly-materials/week03/homework/Homework_3.ipynb" target="_blank"
+      <li><a href="../../../_sources/weekly-materials/week03/homework/Homework_3_key.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -464,6 +464,15 @@ To submit your work:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;mammal_measurements.csv&quot;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;species,adultForearmLen_mm,adultHeadBodyLen_mm\n&#39;
 </pre></div>
 </div>
 </div>
@@ -472,7 +481,7 @@ To submit your work:</p>
 <section id="problem-1b-interpret-the-data-file">
 <h3>Problem 1b. Interpret the data file<a class="headerlink" href="#problem-1b-interpret-the-data-file" title="Permalink to this heading">#</a></h3>
 <p>Please explain what data is contained in this file by examining the contents of the first line (the “header”). (<em>1pt</em>)</p>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><em>Solution</em>: This dataset seems to contain information on forearm length and total body length for different species of mammals.</p>
 </section>
 </section>
 <section id="problem-2-iterate-through-the-lines-and-calculate-a-metric-for-relative-forelimb-length">
@@ -489,6 +498,15 @@ To submit your work:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">sp_forearms</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">line_vals</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="n">line_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">forearm_len</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_vals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">body_len</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_vals</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">rel_forearm_len</span> <span class="o">=</span> <span class="n">forearm_len</span> <span class="o">/</span> <span class="n">body_len</span>
+    <span class="n">sp_forearms</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">rel_forearm_len</span>
 </pre></div>
 </div>
 </div>
@@ -505,6 +523,14 @@ To submit your work:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">genus_measurements</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">line_vals</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="n">line_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">species_splt</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">genus</span> <span class="o">=</span> <span class="n">species_splt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">genus_measurements</span><span class="p">[</span><span class="n">genus</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
 </div>
@@ -517,6 +543,11 @@ To submit your work:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">sp_forearms</span><span class="p">:</span>
+    <span class="n">nmsplt</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">genus</span> <span class="o">=</span> <span class="n">nmsplt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">rel_len</span> <span class="o">=</span> <span class="n">sp_forearms</span><span class="p">[</span><span class="n">species</span><span class="p">]</span>
+    <span class="n">genus_measurements</span><span class="p">[</span><span class="n">genus</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rel_len</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -528,6 +559,12 @@ To submit your work:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+<span class="n">biggest_genus_forearms</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">genus</span> <span class="ow">in</span> <span class="n">genus_measurements</span><span class="p">:</span>
+    <span class="n">measurements</span> <span class="o">=</span> <span class="n">genus_measurements</span><span class="p">[</span><span class="n">genus</span><span class="p">]</span>
+    <span class="n">biggest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+    <span class="n">biggest_genus_forearms</span><span class="p">[</span><span class="n">genus</span><span class="p">]</span> <span class="o">=</span> <span class="n">biggest</span>
 </pre></div>
 </div>
 </div>
@@ -541,7 +578,11 @@ To submit your work:</p>
 <li><p>Describe what it means to have a relative forearm length close to 1, given how we calculated the metric. (<em>1pt</em>)</p></li>
 <li><p>Do you notice anything in common about the genera with the longest forearms? (<em>2pts</em>) Speculate about why these organisms might have such long forearms. Do they share anything in common with regard to their locomotion (how they move around)? (<em>2pts</em>)</p></li>
 </ol>
-<p><strong>WRITE YOUR RESPONSE HERE.</strong></p>
+<p><em>Solution</em></p>
+<ol class="arabic simple">
+<li><p>This would indicate that a species has a forearm that is about as long as its body.</p></li>
+<li><p>Most of them are bat species, which fly. It might be the case that very long limbs are required relative to their body size so that their wings are large enough to support their body weight while flying.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -575,20 +616,20 @@ To submit your work:</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture/lecture3.html"
+       href="Homework_3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class 3: Booleans, Dictionaries, and Mammalian Diet</p>
+        <p class="prev-next-title">EEB125 Homework 3: Reading and manipulating some data</p>
       </div>
     </a>
     <a class="right-next"
-       href="Homework_3_key.html"
+       href="../../week04/lecture/lecture4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EEB125 Homework 3: Reading and manipulating some data</p>
+        <p class="prev-next-title">Class 4: Life history and conservation status</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
